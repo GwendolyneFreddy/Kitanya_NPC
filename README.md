@@ -103,6 +103,7 @@ Kitanya is a friendly, chaotic good elvish Wizard Slayer with lots of dialogue (
 
 - Renamed *setup-Kitanya.tp2* -> *kitanya.tp2* to support AL|EN's "Project Infinity".
 - Removed useless backup folder.
+- Reorganized mod architecture tree: created "*lang*" and "*cre*" folders to sort files according to their types.
 - Lower cased files.
 
 ## 
@@ -128,11 +129,11 @@ Kitanya is a friendly, chaotic good elvish Wizard Slayer with lots of dialogue (
 #### Version 6.3 (28 August, 2010)
 
 - Fixed a minor typo that was causing WeiDU to produce warnings.
-- Fixed a bug that could cause an infinite loop if the player imports Kitanya’s body using the console.
-- Fixed a few typos in Kitanya’s biography.
-- Added Kitanya’s Flaming Sword component (thanks erik!).
-- Fixed a typo in Kitanya’s introductory dialogue.
-- Fixed a bug that could cause Kitanya to go hostile in Firkraag’s lair (I’m the one that wanted this feature in WeiDU to begin with – I should know better!).
+- Fixed a bug that could cause an infinite loop if the player imports Kitanya's body using the console.
+- Fixed a few typos in Kitanya's biography.
+- Added Kitanya's Flaming Sword component (thanks erik!).
+- Fixed a typo in Kitanya's introductory dialogue.
+- Fixed a bug that could cause Kitanya to go hostile in Firkraag's lair (I'm the one that wanted this feature in WeiDU to begin with - I should know better!).
 - Updated WeiDU installer to v220.
 
 ## 
@@ -140,7 +141,7 @@ Kitanya is a friendly, chaotic good elvish Wizard Slayer with lots of dialogue (
 #### Version 6.2.2 (27 September, 2007)
 
 - Kitanya now actually returns to the Copper Coronet when kicked out.
-- Removed SixOfSpade’s Wizard Slayer Enhancements. These are now available in the RPG Dungeon Kit Pack if you want them.
+- Removed SixOfSpade's Wizard Slayer Enhancements. These are now available in the RPG Dungeon Kit Pack if you want them.
 - Updated WeiDU installer to v201.
 
 ## 
@@ -168,7 +169,7 @@ Kitanya is a friendly, chaotic good elvish Wizard Slayer with lots of dialogue (
 - Kitanya's items are now identified when she joins your party.
 - The mod should now work on an SoA-only install (knock on wood).
 - Elethial now works as she should.
-- Kitanya’s portrait now changes to the drow portrait in the Underdark.
+- Kitanya's portrait now changes to the drow portrait in the Underdark.
 - Kitanya now has a better portrait (the old one will be uploaded as an alternate).
 - Shot the person who is responsible for mod quality control.
 - Improved tp2 code.

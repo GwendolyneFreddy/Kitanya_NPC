@@ -1,9 +1,9 @@
 // Version 6.2
 
-BACKUP ~Kitanya/backup~
+BACKUP ~kitanya/backup~
 AUTHOR ~rastor@rpgdungeon.net~
 
-AUTO_TRA ~Kitanya/%s~
+VERSION ~v6.4.1~
 
 ALWAYS
   ACTION_IF NOT FILE_EXISTS ~override/iplot01k.itm~
@@ -109,20 +109,27 @@ ALWAYS
  APPEND ~kit.ids~ ~0x0000 WILDMAGE~
   UNLESS ~\bWILDMAGE\b~
 
- AT_INTERACTIVE_EXIT ~VIEW Kitanya/readme-Kitanya.html~
+ AT_INTERACTIVE_EXIT ~VIEW kitanya/readme-kitanya.html~
 
 END // ALWAYS
 
 ALLOW_MISSING ~SOLAVAMP.DLG~
 
-LANGUAGE ~American English~ ~English~ ~Kitanya/English/kitsetup.tra~
-LANGUAGE ~Spanish (traducido por Pattoko - www.ClanDLAN.net)~ ~Spanish~ ~Kitanya/Spanish/kitsetup.tra~
-									~Kitanya/English/kitsetup.tra~
+AUTO_TRA ~kitanya/lang/%s~
 
-/*
- * Kitanya
- */
+LANGUAGE ~American English~
+		 ~english~
+		 ~kitanya/lang/english/kitsetup.tra~
 
+LANGUAGE ~Espanol (traduccion por Pattoko at ClanDLAN.net)~
+		 ~spanish~
+		 ~kitanya/lang/spanish/kitsetup.tra~
+//		 ~kitanya/lang/english/kitsetup.tra~
+
+
+/* ========================================== *
+ *  Kitanya Conversation/Romance Mod for BG2  *
+ * ========================================== */
 BEGIN @0
 
 ACTION_IF FILE_EXISTS ~override/r#Kitanya.rpgd~
@@ -135,11 +142,11 @@ ACTION_IF FILE_EXISTS ~override/r#Kitanya.rpgd~
 
 // Copying Creature Files
 
-COPY ~Kitanya/r!kit07.cre~ ~override~  // I ignore the Picked Pocket and Set-Traps sounds as they will never be used.
-     ~Kitanya/r!kit09.cre~ ~override~
-     ~Kitanya/r!kit11.cre~ ~override~
-     ~Kitanya/r!kit13.cre~ ~override~
-     ~Kitanya/r!kit15.cre~ ~override~
+COPY ~kitanya/cre/r!kit07.cre~ ~override~  // I ignore the Picked Pocket and Set-Traps sounds as they will never be used.
+     ~kitanya/cre/r!kit09.cre~ ~override~
+     ~kitanya/cre/r!kit11.cre~ ~override~
+     ~kitanya/cre/r!kit13.cre~ ~override~
+     ~kitanya/cre/r!kit15.cre~ ~override~
  SAY NAME1 @1
  SAY NAME2 @1
  SAY BIO @2
@@ -186,13 +193,13 @@ COPY ~Kitanya/r!kit07.cre~ ~override~  // I ignore the Picked Pocket and Set-Tra
  WRITE_ASCII DEATHVAR ~R#KITANYA~
  WRITE_ASCII DIALOG ~R#KITYA~
 
-COPY ~Kitanya/r!kitele.cre~ ~override~
+COPY ~kitanya/cre/r!kitele.cre~ ~override~
  SAY NAME1 @43
  SAY NAME2 @43
  WRITE_ASCII DEATHVAR ~R#ELETHIAL~
  WRITE_ASCII DIALOG ~R#KITELE~
 
-COPY ~Kitanya/r!kitvmp.cre~ ~override~
+COPY ~kitanya/cre/r!kitvmp.cre~ ~override~
  SAY NAME1 @44
  SAY NAME2 @44
  WRITE_ASCII DEATHVAR ~R#KITVAMP~
@@ -200,73 +207,73 @@ COPY ~Kitanya/r!kitvmp.cre~ ~override~
 
 // Copying Items
 
-COPY ~Kitanya/items/r!kitswd.itm~ ~override~
+COPY ~kitanya/items/r!kitswd.itm~ ~override~
  SAY NAME2 @45
  SAY DESC @46
 
-COPY ~Kitanya/items/r!kitshd.itm~ ~override~
+COPY ~kitanya/items/r!kitshd.itm~ ~override~
  SAY NAME2 @47
  SAY DESC @48
 
-COPY ~Kitanya/items/r!kitplt.itm~ ~override~
+COPY ~kitanya/items/r!kitplt.itm~ ~override~
  SAY NAME2 @49
  SAY DESC @50
 
-COPY ~Kitanya/items/r!kitbdy.itm~ ~override~
+COPY ~kitanya/items/r!kitbdy.itm~ ~override~
  SAY NAME1 @51
  SAY NAME2 @51
  SAY DESC @52
 
-COPY ~Kitanya/items/r!kitrbk.itm~ ~override~
+COPY ~kitanya/items/r!kitrbk.itm~ ~override~
  SAY NAME1 @53
  SAY NAME2 @53
  SAY DESC @54
 
-COPY ~Kitanya/items/r!kitrng.itm~ ~override~
+COPY ~kitanya/items/r!kitrng.itm~ ~override~
  SAY NAME2 @55
  SAY DESC @56
 
 // Modifying In-Game Scripts
 
-EXTEND_TOP ~AR1105.bcs~ ~Kitanya/appends/kitspawn.baf~
+EXTEND_TOP ~AR1105.bcs~ ~kitanya/appends/kitspawn.baf~
 
-EXTEND_TOP ~Anomen.bcs~ ~Kitanya/appends/anoscript.baf~
+EXTEND_TOP ~Anomen.bcs~ ~kitanya/appends/anoscript.baf~
 
-/* EXTEND_TOP ~Valygar.bcs~ ~Kitanya/appends/valygar.baf~ */ // To be incorporated once Valygar romance is finished.
+/* EXTEND_TOP ~Valygar.bcs~ ~kitanya/appends/valygar.baf~ */ // To be incorporated once Valygar romance is finished.
 
-EXTEND_BOTTOM ~AR0406.bcs~ ~Kitanya/appends/AR0406.baf~
+EXTEND_BOTTOM ~AR0406.bcs~ ~kitanya/appends/AR0406.baf~
 
-/* EXTEND_TOP ~cleanse.bcs~ ~Kitanya/appends/revive.baf~ */ // To be incorporated once romance is finished.
+/* EXTEND_TOP ~cleanse.bcs~ ~kitanya/appends/revive.baf~ */ // To be incorporated once romance is finished.
 
-EXTEND_TOP ~AR0809.bcs~ ~Kitanya/appends/AR0809.baf~
+EXTEND_TOP ~AR0809.bcs~ ~kitanya/appends/AR0809.baf~
 
-EXTEND_TOP ~baldur.bcs~ ~Kitanya/appends/kbaldur.baf~
+EXTEND_TOP ~baldur.bcs~ ~kitanya/appends/kbaldur.baf~
 
-EXTEND_TOP ~edwin.bcs~ ~Kitanya/appends/eddy.baf~
+EXTEND_TOP ~edwin.bcs~ ~kitanya/appends/eddy.baf~
 
-EXTEND_TOP ~AR1100.bcs~ ~Kitanya/appends/ar1100.baf~
+EXTEND_TOP ~AR1100.bcs~ ~kitanya/appends/ar1100.baf~
 
-COMPILE ~Kitanya/scripts~
+COMPILE ~kitanya/scripts~
 
 // We want portraits in the game, right?
 
-COPY ~Kitanya/graphics~ ~override~
+COPY ~kitanya/graphics~ ~override~
 
 // Now for the dialogues
 
-COMPILE ~Kitanya/dialogues~
+COMPILE ~kitanya/dialogues~
 
 // Sound files come next.  After all, what's an NPC with no soundset?
 
-COPY ~Kitanya/sounds~ ~override~
+COPY ~kitanya/sounds~ ~override~
 
 // Let's bring over the innates
 
-COPY ~Kitanya/spells/r!kitcrm.spl~ ~override~
+COPY ~kitanya/spells/r!kitcrm.spl~ ~override~
  SAY NAME1 @57
 
-COPY ~Kitanya/spells/r!kitdrw.spl~ ~override~
-     ~Kitanya/spells/r!kitnrm.spl~ ~override~
+COPY ~kitanya/spells/r!kitdrw.spl~ ~override~
+     ~kitanya/spells/r!kitnrm.spl~ ~override~
 
 // Now is the hard part.  Actually appending to the files so that the game recognises her.
 
@@ -295,7 +302,7 @@ ACTION_IF (("%WEIDU_OS%" STRING_COMPARE_CASE "osx") = 0)
   AT_INTERACTIVE_EXIT ~sh Kitanya/install.sh~
   AT_INTERACTIVE_UNINSTALL ~sh Kitanya/uninstall.sh~
  END ELSE BEGIN
-  AT_INTERACTIVE_EXIT ~Kitanya/kitaudio.bat~
+  AT_INTERACTIVE_EXIT ~kitanya/kitaudio.bat~
 END
 
 /*
