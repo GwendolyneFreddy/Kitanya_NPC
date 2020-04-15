@@ -4,7 +4,7 @@
 ![Language](https://img.shields.io/static/v1?label=language&message=English%20%7C%20Spanish&color=limegreen)
 
 
-<div align="center"><h1>Kitanya NPC for BGII (WIP) </h1>
+<div align="center"><h1>Kitanya NPC for BGII (WIP)</h1>
 
 <h3>A mod hosted by Spellhold Studios for Baldur's Gate II: SoA and ToB (classical games)<h3>
 
@@ -98,6 +98,14 @@ Kitanya is a friendly, chaotic good elvish Wizard Slayer with lots of dialogue (
 ·        
 
 ## <a name="versions" id="versions"></a>Version History
+
+#### Version 6.5 (day month, 2020)
+
+- Renamed *setup-Kitanya.tp2* -> *kitanya.tp2* to support AL|EN's "Project Infinity".
+- Removed useless backup folder.
+- Lower cased files.
+
+## 
 
 #### Version 6.4.1 (9 October, 2010)
 
