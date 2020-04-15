@@ -30,7 +30,7 @@ Kitanya_NPC
 
 ## <a name="intro" id="intro"></a>Overview
 
-Kitanya is a friendly, chaotic good elvish Wizard Slayer with lots of dialogue (over 3,000 lines at present). She has at least two banters with every Bioware NPC and many more with most.
+<img style="float: left;" src="kitanya/readme/images/rkitanm.jpg"> Kitanya is a friendly, chaotic good elvish Wizard Slayer with lots of dialogue (over 3,000 lines at present). She has at least two banters with every Bioware NPC and many more with most.
 
 <div align="right"><a href="#top">Back to top</a></div>
 
@@ -103,6 +103,10 @@ Kitanya is a friendly, chaotic good elvish Wizard Slayer with lots of dialogue (
 
 - Renamed *setup-Kitanya.tp2* -> *kitanya.tp2* to support AL|EN's "Project Infinity".
 - Externalized tp2 code into *main_component.tpa* library for more comfortable readability and maintenance.
+- Included BWP Fixpack patches:
+	- r!kitele.baf: <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486802">Lollorian's ForceSpellRES corrections<a> (replaced *ga_somespell* with *somespell*).
+	- kitanyaj.d and kitya.d: <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482945">Lollorian's GLOBAL fixes</a> (replaced *GLOBALS* variable with *GLOBAL*).
+	- kitanyaj.d: Made sure all instances of "*!Dead("R#Kitanya)*" have been replaced with "*!Dead("R#Kitanya")*".
 - Removed useless backup folder.
 - Reorganized mod architecture tree: created "*lang*" and "*cre*" folders to sort files according to their types.
 - Lower cased files.

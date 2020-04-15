@@ -4,9 +4,9 @@ IF WEIGHT #0 ~AreaCheck("AR2800")
               InParty("R#Kitanya")
 	      !Dead("R#Kitanya")
 	      !StateCheck("R#Kitanya",STATE_SLEEPING)
-              Global("R#KitanyaHome","GLOBALS",0)~ THEN BEGIN KitanyaHomeSay
+              Global("R#KitanyaHome","GLOBAL",0)~ THEN BEGIN KitanyaHomeSay
    SAY @0 = @1 = @2
-   IF ~~ THEN DO ~SetGlobal("R#KitanyaHome","GLOBALS",1)~ EXIT
+   IF ~~ THEN DO ~SetGlobal("R#KitanyaHome","GLOBAL",1)~ EXIT
 END
 
 IF WEIGHT #1 ~Global("PhaereInnuendo","GLOBAL",2)
@@ -154,7 +154,7 @@ INTERJECT_COPY_TRANS VALYGAR 28 r#ValygarAttacked
    == R#KITYJ IF ~InParty("R#Kitanya")
                   !StateCheck("R#Kitanya",STATE_SLEEPING)
                   !Dead("R#Kitanya")~ THEN @48 = @49 = @50 
-  DO ~LeaveParty() SetGlobal("R#KitValygarAttacked","GLOBALS",1)~
+  DO ~LeaveParty() SetGlobal("R#KitValygarAttacked","GLOBAL",1)~
 END
 
 INTERJECT_COPY_TRANS ANOMEN 11 r#KitAnomenRighteousness
@@ -396,7 +396,7 @@ INTERJECT_COPY_TRANS PPIRENI2 35 r#KitIrenicusThreat
 END
 
 INTERJECT_COPY_TRANS YOSHJ 113 r#KitYoshTraitor
-  == R#KITYJ IF ~Global("YoshNoticeKit","GLOBALS",1)
+  == R#KITYJ IF ~Global("YoshNoticeKit","GLOBAL",1)
                  InParty("R#Kitanya")
 		 See("R#Kitanya")
 		 !StateCheck("R#Kitanya",STATE_SLEEPING)

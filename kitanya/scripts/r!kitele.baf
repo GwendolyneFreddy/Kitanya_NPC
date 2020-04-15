@@ -81,7 +81,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("Deva","LOCALS",1)
-    ForceSpellRES("GA_sppr727",Myself)
+    ForceSpellRES("sppr727",Myself)
 END
 
 IF
@@ -114,7 +114,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("Vengeance","LOCALS",1)
-    ForceSpellRES("GA_sppr722",LastAttackerOf(Myself))
+    ForceSpellRES("sppr722",LastAttackerOf(Myself))
 END
 
 IF
@@ -134,7 +134,7 @@ IF
 THEN
   RESPONSE #100
     SetGlobal("Whirlwind","LOCALS",1)
-    ForceSpellRES("GA_spcl901",Myself)
+    ForceSpellRES("spcl901",Myself)
 END
 
 IF

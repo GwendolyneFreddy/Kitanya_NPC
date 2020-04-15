@@ -284,7 +284,7 @@ END
 
 IF ~~ THEN BEGIN PCKitDeath // from: PCGreed.1
   SAY @125
-  IF ~~ THEN DO ~SetGlobal("KitMadMonster","GLOBALS",1)~ EXIT
+  IF ~~ THEN DO ~SetGlobal("KitMadMonster","GLOBAL",1)~ EXIT
 END
 
 IF ~~ THEN BEGIN PCKitCharm // from:  PCGreed.2
