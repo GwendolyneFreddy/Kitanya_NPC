@@ -1,1 +1,0 @@
-This is simply a placeholder for the folder where the uninstall info for the mod is stored.
