@@ -102,6 +102,7 @@ Kitanya is a friendly, chaotic good elvish Wizard Slayer with lots of dialogue (
 #### Version 6.5 (day month, 2020)
 
 - Renamed *setup-Kitanya.tp2* -> *kitanya.tp2* to support AL|EN's "Project Infinity".
+- Externalized tp2 code into *main_component.tpa* library for more comfortable readability and maintenance.
 - Removed useless backup folder.
 - Reorganized mod architecture tree: created "*lang*" and "*cre*" folders to sort files according to their types.
 - Lower cased files.
