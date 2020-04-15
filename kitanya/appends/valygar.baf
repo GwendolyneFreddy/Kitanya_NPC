@@ -1,0 +1,22 @@
+IF
+ GlobalTimerExpired("r!ValyTalkKit","GLOBAL")
+ !AreaType(DUNGEON)
+THEN
+ RESPONSE #100
+  IncrementGlobal("r!ValygarKitanyaRomance","GLOBAL",1)
+  Interact("r!Kitanya")
+END
+
+IF
+ Global("r!KitanyaRomanceActive","GLOBAL",2)
+THEN
+ RESPONSE #100
+   SetGlobal("r!ValygarKitanyaRomance","GLOBAL",-1)
+END
+
+IF
+ Global("r!ValKitMage","LOCALS",1)
+THEN
+ RESPONSE #100
+  RealSetGlobalTimer("r!ValyTalkKit","GLOBAL",TEN_DAYS)
+END

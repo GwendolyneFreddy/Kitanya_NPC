@@ -1,0 +1,431 @@
+// Version 6.2
+
+BACKUP ~Kitanya/backup~
+AUTHOR ~rastor@rpgdungeon.net~
+
+AUTO_TRA ~Kitanya/%s~
+
+ALWAYS
+  ACTION_IF NOT FILE_EXISTS ~override/iplot01k.itm~
+   THEN BEGIN
+      COPY_EXISTING ~SW1H01.itm~ ~override/iplot01k.itm~
+    END
+  ACTION_IF NOT FILE_EXISTS ~override/iplot04g.itm~
+   THEN BEGIN
+      COPY_EXISTING ~SW1H01.itm~ ~override/iplot04g.itm~
+    END
+  ACTION_IF NOT FILE_EXISTS ~override/iplot04h.itm~
+   THEN BEGIN
+      COPY_EXISTING ~SW1H01.itm~ ~override/iplot04h.itm~
+    END
+  ACTION_IF NOT FILE_EXISTS ~override/iplot04i.itm~
+   THEN BEGIN
+      COPY_EXISTING ~SW1H01.itm~ ~override/iplot04i.itm~
+    END
+  ACTION_IF NOT FILE_EXISTS ~data/25dialog.bif~ // If ToB is not installed
+   THEN BEGIN
+  APPEND ~ACTION.IDS~
+~31 SpellRES(S:RES*,O:Target*)
+95 SpellPointRES(S:RES*,P:Target*) 
+113 ForceSpellRES(S:RES*,O:Target)
+114 ForceSpellPointRES(S:RES*,P:Target)
+160 ApplySpellRES(S:RES*,O:Target)
+181 ReallyForceSpellRES(S:RES*,O:Target) 
+191 SpellNoDecRES(S:RES*,O:Target*)
+192 SpellPointNoDecRES(S:RES*,P:Target*) 
+240 ReallyForceSpellDeadRES(S:RES*,O:Target)
+318 ForceSpellRangeRES(S:RES*,O:Target)
+319 ForceSpellPointRangeRES(S:RES*,P:Target)
+337 ReallyForceSpellPointRES(S:RES*,P:Target*)
+338 SetCutSceneLite(I:BOOL*BOOLEAN)~
+  BUT_ONLY_IF_IT_CHANGES
+  UNLESS ~31 SpellRES(S:RES*,O:Target*)~
+ END // ACTION_IF
+ // KIT.IDS Patch (Thanks, CamDawg!)
+ COPY_EXISTING_REGEXP GLOB ~^anomen[0-9]*\.cre~ ~override~
+                           ~^imoen[0-9]*\.cre~  ~override~
+                           ~^mazzy[0-9]*\.cre~  ~override~
+  READ_LONG 0x244 "current_kit_value"
+  PATCH_IF ("%current_kit_value%" = 0x00000000) BEGIN
+    WRITE_LONG 0x244 0x40000000
+  END
+ BUT_ONLY_IF_IT_CHANGES
+
+ COPY_EXISTING_REGEXP GLOB ~^haer[0-9]*\.cre~ ~override~
+  READ_LONG 0x244 "current_kit_value"
+  PATCH_IF ("%current_kit_value%" = 0x00000020) BEGIN
+    WRITE_LONG 0x244 0x400d0000
+  END
+ BUT_ONLY_IF_IT_CHANGES
+
+ COPY_EXISTING_REGEXP GLOB ~^korgan[0-9]*\.cre~ ~override~
+  READ_LONG 0x244 "current_kit_value"
+  PATCH_IF ("%current_kit_value%" = 0x00010000) BEGIN
+    WRITE_LONG 0x244 0x40010000
+  END
+ BUT_ONLY_IF_IT_CHANGES
+
+/* Thanks to CamDawg for providing this code */
+ COPY_EXISTING ~kit.ids~ ~override~
+  REPLACE_TEXTUALLY ~.*\bTRUECLASS\b~              ~0x4000 TRUECLASS~
+  REPLACE_TEXTUALLY ~.*\bBERSERKER\b~              ~0x4001 BERSERKER~
+  REPLACE_TEXTUALLY ~.*\bWIZARDSLAYER\b~           ~0x4002 WIZARDSLAYER~
+  REPLACE_TEXTUALLY ~.*\bKENSAI\b~                 ~0x4003 KENSAI~
+  REPLACE_TEXTUALLY ~.*\bCAVALIER\b~               ~0x4004 CAVALIER~
+  REPLACE_TEXTUALLY ~.*\bINQUISITOR\b~             ~0x4005 INQUISITOR~
+  REPLACE_TEXTUALLY ~.*\bUNDEADHUNTER\b~           ~0x4006 UNDEADHUNTER~
+  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_ABJURER\b~     ~0x0040 MAGESCHOOL_ABJURER~
+  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_CONJURER\b~    ~0x0080 MAGESCHOOL_CONJURER~
+  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_DIVINER\b~     ~0x0100 MAGESCHOOL_DIVINER~
+  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_ENCHANTER\b~   ~0x0200 MAGESCHOOL_ENCHANTER~
+  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_ILLUSIONIST\b~ ~0x0400 MAGESCHOOL_ILLUSIONIST~
+  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_INVOKER\b~     ~0x0800 MAGESCHOOL_INVOKER~
+  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_NECROMANCER\b~ ~0x1000 MAGESCHOOL_NECROMANCER~
+  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_TRANSMUTER\b~  ~0x2000 MAGESCHOOL_TRANSMUTER~
+  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_GENERALIST\b~  ~0x0000 WILDMAGE~
+  REPLACE_TEXTUALLY ~.*\bFERALAN\b~                ~0x4007 FERALAN~
+  REPLACE_TEXTUALLY ~.*\bSTALKER\b~                ~0x4008 STALKER~
+  REPLACE_TEXTUALLY ~.*\bBEASTMASTER\b~            ~0x4009 BEASTMASTER~
+  REPLACE_TEXTUALLY ~.*\bASSASIN\b~                ~0x400A ASSASIN~
+  REPLACE_TEXTUALLY ~.*\bBOUNTYHUNTER\b~           ~0x400B BOUNTYHUNTER~
+  REPLACE_TEXTUALLY ~.*\bSWASHBUCKLER\b~           ~0x400C SWASHBUCKLER~
+  REPLACE_TEXTUALLY ~.*\bBLADE\b~                  ~0x400D BLADE~
+  REPLACE_TEXTUALLY ~.*\bJESTER\b~                 ~0x400E JESTER~
+  REPLACE_TEXTUALLY ~.*\bSKALD\b~                  ~0x400F SKALD~
+  REPLACE_TEXTUALLY ~.*\bGODTALOS\b~               ~0x4013 GODTALOS~
+  REPLACE_TEXTUALLY ~.*\bGODHELM\b~                ~0x4014 GODHELM~
+  REPLACE_TEXTUALLY ~.*\bGODLATHANDER\b~           ~0x4015 GODLATHANDER~
+  REPLACE_TEXTUALLY ~.*\bTOTEMIC\b~                ~0x4010 TOTEMIC~
+  REPLACE_TEXTUALLY ~.*\bSHAPESHIFTER\b~           ~0x4011 SHAPESHIFTER~
+  REPLACE_TEXTUALLY ~.*\bBEASTFRIEND\b~            ~0x4012 BEASTFRIEND~
+  REPLACE_TEXTUALLY ~.*\bBARBARIAN\b~              ~0x0000 BARBARIAN~
+  REPLACE_TEXTUALLY ~.*\bWILDMAGE\b~               ~0x0000 WILDMAGE~
+ BUT_ONLY_IF_IT_CHANGES
+
+ APPEND ~kit.ids~ ~0x4000 TRUECLASS~
+  UNLESS ~\bTRUECLASS\b~
+ APPEND ~kit.ids~ ~0x0000 BARBARIAN~
+  UNLESS ~\bBARBARIAN\b~
+ APPEND ~kit.ids~ ~0x0000 WILDMAGE~
+  UNLESS ~\bWILDMAGE\b~
+
+ AT_INTERACTIVE_EXIT ~VIEW Kitanya/readme-Kitanya.html~
+
+END // ALWAYS
+
+ALLOW_MISSING ~SOLAVAMP.DLG~
+
+LANGUAGE ~American English~ ~English~ ~Kitanya/English/kitsetup.tra~
+LANGUAGE ~Spanish (traducido por Pattoko - www.ClanDLAN.net)~ ~Spanish~ ~Kitanya/Spanish/kitsetup.tra~
+									~Kitanya/English/kitsetup.tra~
+
+/*
+ * Kitanya
+ */
+
+BEGIN @0
+
+ACTION_IF FILE_EXISTS ~override/r#Kitanya.rpgd~
+ THEN BEGIN
+  FAIL @59
+ END ELSE BEGIN
+  PRINT @60
+  COPY_EXISTING ~SW1H01.ITM~ ~override/r#Kitanya.rpgd~
+ END
+
+// Copying Creature Files
+
+COPY ~Kitanya/r!kit07.cre~ ~override~  // I ignore the Picked Pocket and Set-Traps sounds as they will never be used.
+     ~Kitanya/r!kit09.cre~ ~override~
+     ~Kitanya/r!kit11.cre~ ~override~
+     ~Kitanya/r!kit13.cre~ ~override~
+     ~Kitanya/r!kit15.cre~ ~override~
+ SAY NAME1 @1
+ SAY NAME2 @1
+ SAY BIO @2
+ SAY SELECT_COMMON1 @3
+ SAY SELECT_COMMON2 @4
+ SAY SELECT_COMMON3 @5
+ SAY SELECT_COMMON4 @6
+ SAY SELECT_COMMON5 @7
+ SAY SELECT_COMMON6 @8
+ SAY BATTLE_CRY1 @9
+ SAY BATTLE_CRY2 @10
+ SAY BATTLE_CRY3 @11
+ SAY BATTLE_CRY4 @12
+ SAY BATTLE_CRY5 @13 
+ SAY SELECT_ACTION1 @14 
+ SAY SELECT_ACTION2 @15 
+ SAY SELECT_ACTION3 @16 
+ SAY SELECT_ACTION4 @17 
+ SAY SELECT_ACTION5 @18 
+ SAY SELECT_ACTION6 @19 
+ SAY SELECT_ACTION7 @20 
+ SAY AREA_FOREST @21
+ SAY AREA_DUNGEON @22 
+ SAY AREA_CITY @23
+ SAY AREA_DAY @24
+ SAY AREA_NIGHT @25 
+ SAY LEADER @26
+ SAY BORED @27
+ SAY UNHAPPY_ANNOYED @28 
+ SAY UNHAPPY_SERIOUS @29 
+ SAY UNHAPPY_BREAKING @30 
+ SAY HAPPY @31
+ SAY SELECT_RARE1 @32 
+ SAY SELECT_RARE2 @33 
+ SAY DAMAGE @34
+ SAY HURT @35
+ SAY DYING @36 
+ SAY CRITICAL_HIT @37 
+ SAY CRITICAL_MISS @38 
+ SAY TARGET_IMMUNE @39 
+ SAY INVENTORY_FULL @40 
+ SAY TIRED @41
+ SAY MORALE @42
+ WRITE_ASCII DEATHVAR ~R#KITANYA~
+ WRITE_ASCII DIALOG ~R#KITYA~
+
+COPY ~Kitanya/r!kitele.cre~ ~override~
+ SAY NAME1 @43
+ SAY NAME2 @43
+ WRITE_ASCII DEATHVAR ~R#ELETHIAL~
+ WRITE_ASCII DIALOG ~R#KITELE~
+
+COPY ~Kitanya/r!kitvmp.cre~ ~override~
+ SAY NAME1 @44
+ SAY NAME2 @44
+ WRITE_ASCII DEATHVAR ~R#KITVAMP~
+ WRITE_ASCII DIALOG ~R#KITELE~
+
+// Copying Items
+
+COPY ~Kitanya/items/r!kitswd.itm~ ~override~
+ SAY NAME2 @45
+ SAY DESC @46
+
+COPY ~Kitanya/items/r!kitshd.itm~ ~override~
+ SAY NAME2 @47
+ SAY DESC @48
+
+COPY ~Kitanya/items/r!kitplt.itm~ ~override~
+ SAY NAME2 @49
+ SAY DESC @50
+
+COPY ~Kitanya/items/r!kitbdy.itm~ ~override~
+ SAY NAME1 @51
+ SAY NAME2 @51
+ SAY DESC @52
+
+COPY ~Kitanya/items/r!kitrbk.itm~ ~override~
+ SAY NAME1 @53
+ SAY NAME2 @53
+ SAY DESC @54
+
+COPY ~Kitanya/items/r!kitrng.itm~ ~override~
+ SAY NAME2 @55
+ SAY DESC @56
+
+// Modifying In-Game Scripts
+
+EXTEND_TOP ~AR1105.bcs~ ~Kitanya/appends/kitspawn.baf~
+
+EXTEND_TOP ~Anomen.bcs~ ~Kitanya/appends/anoscript.baf~
+
+/* EXTEND_TOP ~Valygar.bcs~ ~Kitanya/appends/valygar.baf~ */ // To be incorporated once Valygar romance is finished.
+
+EXTEND_BOTTOM ~AR0406.bcs~ ~Kitanya/appends/AR0406.baf~
+
+/* EXTEND_TOP ~cleanse.bcs~ ~Kitanya/appends/revive.baf~ */ // To be incorporated once romance is finished.
+
+EXTEND_TOP ~AR0809.bcs~ ~Kitanya/appends/AR0809.baf~
+
+EXTEND_TOP ~baldur.bcs~ ~Kitanya/appends/kbaldur.baf~
+
+EXTEND_TOP ~edwin.bcs~ ~Kitanya/appends/eddy.baf~
+
+EXTEND_TOP ~AR1100.bcs~ ~Kitanya/appends/ar1100.baf~
+
+COMPILE ~Kitanya/scripts~
+
+// We want portraits in the game, right?
+
+COPY ~Kitanya/graphics~ ~override~
+
+// Now for the dialogues
+
+COMPILE ~Kitanya/dialogues~
+
+// Sound files come next.  After all, what's an NPC with no soundset?
+
+COPY ~Kitanya/sounds~ ~override~
+
+// Let's bring over the innates
+
+COPY ~Kitanya/spells/r!kitcrm.spl~ ~override~
+ SAY NAME1 @57
+
+COPY ~Kitanya/spells/r!kitdrw.spl~ ~override~
+     ~Kitanya/spells/r!kitnrm.spl~ ~override~
+
+// Now is the hard part.  Actually appending to the files so that the game recognises her.
+
+APPEND ~pdialog.2da~
+~R#Kitanya     R#kityP     R#kityJ     KitanyaD~
+UNLESS ~R#Kitanya~
+UNLESS ~25POST~
+
+APPEND ~pdialog.2da~
+~R#Kitanya     R#kityP     R#kityJ     kitanyaD     R#KIT25P     R#KIT25J     KitanyaD~
+UNLESS ~R#Kitanya~
+IF ~25POST~
+
+APPEND ~interdia.2da~
+~R#Kitanya     R#kityB~
+UNLESS ~R#Kitanya~
+UNLESS ~25FILE~
+
+APPEND ~interdia.2da~
+~R#Kitanya     R#kityB     R#KIT25B~
+UNLESS ~R#Kitanya~
+IF ~25FILE~
+
+ACTION_IF (("%WEIDU_OS%" STRING_COMPARE_CASE "osx") = 0)
+ THEN BEGIN
+  AT_INTERACTIVE_EXIT ~sh Kitanya/install.sh~
+  AT_INTERACTIVE_UNINSTALL ~sh Kitanya/uninstall.sh~
+ END ELSE BEGIN
+  AT_INTERACTIVE_EXIT ~Kitanya/kitaudio.bat~
+END
+
+/*
+ * Wizardslayer Bug Fixes
+ */
+
+BEGIN @58
+
+ACTION_IF FILE_EXISTS ~override/r#WizardslayerFixes.rpgd~
+ THEN BEGIN
+  FAIL @61
+ END ELSE BEGIN
+  COPY_EXISTING ~SW1H01.ITM~ ~override/r#WizardslayerFixes.rpgd~
+ END
+
+COPY_EXISTING ~SCRL03.ITM~ ~override~
+	      ~SCRL04.ITM~ ~override~
+	      ~SCRL05.ITM~ ~override~
+	      ~SCRL06.ITM~ ~override~
+	      ~SCRL07.ITM~ ~override~
+	      ~SCRL08.ITM~ ~override~
+	      ~SCRL09.ITM~ ~override~
+	      ~SCRL10.ITM~ ~override~
+	      ~SCRL11.ITM~ ~override~
+	      ~SCRL12.ITM~ ~override~
+	      ~SCRL13.ITM~ ~override~
+	      ~SCRL14.ITM~ ~override~
+	      ~SCRL15.ITM~ ~override~
+	      ~SCRL16.ITM~ ~override~
+	      ~SCRL17.ITM~ ~override~
+	      ~SCRL18.ITM~ ~override~
+ READ_BYTE 0x2f "usability"
+ WRITE_BYTE 0x2f ("%usability%" BOR "0b00000010")
+BUT_ONLY_IF_IT_CHANGES
+
+/*
+ * Kitanya's Flaming Sword (from 1PP)
+ */
+
+BEGIN @65 // Code stolen from Nythrun and bastardized!
+REQUIRE_COMPONENT ~1pp_flamingswords/1pp_flamingswords.tp2~ ~0~ @66
+
+ACTION_IF FILE_EXISTS ~override/r#KitanyaFlamingSword.rpgd~
+ THEN BEGIN
+  FAIL @61
+ END ELSE BEGIN
+  COPY_EXISTING ~SW1H01.ITM~ ~override/r#KitanyaFlamingSword.rpgd~
+ END
+
+COPY_EXISTING ~r!kitswd.itm~ ~override~
+ SAY NAME2 @45
+ WRITE_ASCII 0x22 ~FS~ #2
+  PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN
+   READ_LONG  0x64 "ho"
+   READ_SHORT 0x68 "hc"
+   READ_LONG  0x6a "eo"
+   READ_SHORT 0x70 "ge"
+   SET "blade" = 0x9fefff00
+   SET "grip"  = 0x20a5da00
+   SET "minor" = 0x3f00ff00
+   SET "blade2" = 0xc
+   SET "grip2"  = 0x73
+   SET "minor2" = 0x73
+   PATCH_IF ("blade" != 0x00) THEN BEGIN
+    INSERT_BYTES ("eo" + (0x30 * "ge") + 0x00) 0x30
+    WRITE_SHORT  ("eo" + (0x30 * "ge") + 0x00) 0x08
+    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x02) 0x01
+    WRITE_LONG   ("eo" + (0x30 * "ge") + 0x04) "blade"
+    WRITE_LONG   ("eo" + (0x30 * "ge") + 0x08) 0x10
+    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x0c) 0x02
+    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x12) 0x64
+    SET "ge" += 0x01
+   END
+   PATCH_IF ("grip" != 0x00) THEN BEGIN
+    INSERT_BYTES ("eo" + (0x30 * "ge") + 0x00) 0x30
+    WRITE_SHORT  ("eo" + (0x30 * "ge") + 0x00) 0x08
+    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x02) 0x01
+    WRITE_LONG   ("eo" + (0x30 * "ge") + 0x04) "grip"
+    WRITE_LONG   ("eo" + (0x30 * "ge") + 0x08) 0x14
+    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x0c) 0x02
+    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x12) 0x64
+    SET "ge" += 0x01
+   END
+   PATCH_IF ("minor" != 0x00) THEN BEGIN
+    INSERT_BYTES ("eo" + (0x30 * "ge") + 0x00) 0x30
+    WRITE_SHORT  ("eo" + (0x30 * "ge") + 0x00) 0x08
+    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x02) 0x01
+    WRITE_LONG   ("eo" + (0x30 * "ge") + 0x04) "minor"
+    WRITE_LONG   ("eo" + (0x30 * "ge") + 0x08) 0x15
+    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x0c) 0x02
+    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x12) 0x64
+    SET "ge" += 0x01
+   END
+   PATCH_IF ("blade2" != 0x00) THEN BEGIN
+    INSERT_BYTES ("eo" + (0x30 * "ge") + 0x00) 0x30
+    WRITE_SHORT  ("eo" + (0x30 * "ge") + 0x00) 0x07
+    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x02) 0x01
+    WRITE_LONG   ("eo" + (0x30 * "ge") + 0x04) "blade2"
+    WRITE_LONG   ("eo" + (0x30 * "ge") + 0x08) 0x10
+    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x0c) 0x02
+    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x12) 0x64
+    SET "ge" += 0x01
+   END
+   PATCH_IF ("grip2" != 0x00) THEN BEGIN
+    INSERT_BYTES ("eo" + (0x30 * "ge") + 0x00) 0x30
+    WRITE_SHORT  ("eo" + (0x30 * "ge") + 0x00) 0x07
+    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x02) 0x01
+    WRITE_LONG   ("eo" + (0x30 * "ge") + 0x04) "grip2"
+    WRITE_LONG   ("eo" + (0x30 * "ge") + 0x08) 0x14
+    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x0c) 0x02
+    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x12) 0x64
+    SET "ge" += 0x01
+   END
+   PATCH_IF ("minor2" != 0x00) THEN BEGIN
+    INSERT_BYTES ("eo" + (0x30 * "ge") + 0x00) 0x30
+    WRITE_SHORT  ("eo" + (0x30 * "ge") + 0x00) 0x07
+    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x02) 0x01
+    WRITE_LONG   ("eo" + (0x30 * "ge") + 0x04) "minor2"
+    WRITE_LONG   ("eo" + (0x30 * "ge") + 0x08) 0x15
+    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x0c) 0x02
+    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x12) 0x64
+    SET "ge" += 0x01
+   END
+   PATCH_IF (("blade" != 0x00) OR ("grip" != 0x00) OR ("minor" != 0x00)) THEN BEGIN
+    WRITE_SHORT 0x70 "ge"
+    FOR ("i1" = 0x00; "i1" < (0x38 * "hc"); "i1" += 0x38) BEGIN
+     WRITE_SHORT ("ho" + "i1" + 0x20) "ge"
+     READ_SHORT  ("ho" + "i1" + 0x1e) "ec"
+     SET "ge" += "ec"
+    END
+   END
+  END
+ BUT_ONLY_IF_IT_CHANGES

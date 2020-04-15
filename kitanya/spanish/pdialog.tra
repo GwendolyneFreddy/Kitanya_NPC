@@ -1,0 +1,56 @@
+@0    =~La Batalla Final contra Bodhi.
+
+¡Bodhi ha convertido a Kitanya en un vampiro! O... o casi. El proceso no pudo ser completado por el poco tiempo que ha tenido Bodhi con ella. Esperemos que algo podamos hacer, sino la habremos perdido. Tal vez el sabio guerrero elfo sepa alguna forma de restaurarla... o Elhan...~
+@1    =~La Batalla Final contra Bodhi.
+
+Bodhi apareció en una emboscada, poco antes de llegar a su refugio, me advirtió que era consciente de mi búsqueda y me robo a la persona que más quiero en mi corazón: Kitanya. Antes de que desapareciera y liberara más de sus creaciones no vivientes sobre mí, Bodhi me advirtió que si sigo voy a perder aún más de lo que he pensado. No puedo renunciar a la Linterna Rhynn... pero ahora la vida y el alma inmortal de la única que amo está en juego, todavía!~
+@2    = ~No es mi decisión que debamos seguir por rumbos distintos. Hay mucho por hacer aún. ¿Está seguro de que desea poner fin a nuestra alianza?~ [R!KITP01]
+@3    = ~Lo siento, Kitanya, pero no necesito de tus talentos ahora.~
+@4    = ~Fuí un poco apresurado. No quiero que os vayáis. Sigamos en el grupo.~
+@5    = ~No esperaré mucho tiempo para que cambiéis de opinión, <CHARNAME>, pero ¿dónde queréis que os espere para volver a reuniros?~
+@6    = ~Ve a la Corona de Cobre. Os buscaré allí si deseo reuniros de nuevo.~
+@7    = ~Esto es una verdadera sorpresa, mi amor. Yo siempre he pensado que cuando dos personas en verdad os preocupan uno de otro deberían estar juntos.~
+@8    = ~Si eso es lo que queréis, entonces no me opondré y mas tarde nos veremos... Las cosas no serán iguales entre nosotros.~
+@9    = ~Lo siento, Kitanya. Esto es tan complicado para mí como para vos, pero es necesario.~
+@10   = ~Por supuesto que no quiero que os vayáis. Por favor, vuelve a mi lado.~
+@11   = ~E-estoy sorprendida por tu decisión, <CHARNAME>. Pensé que habíamos pasado buenos momentos mientras andábamos juntos. (pone rostro de súplica) Por favor, decidme que ha sido una equivocación.~
+@12   = ~No me he equivocado. Adiós, Kitanya.~
+@13   = ~Sí, he cometido un error. Por favor, permaneced en el grupo.~
+@14   = ~¡<CHARNAME>! ¡Fue horrible! No tenía el control de mis actos... ser relegada por ser poco más que un animal... M-me alegro poder volver mis ojos en ti una vez más.~
+@15   = ~Y yo estoy encantado de volver a ver vuestro bello rostro una vez más. Nunca nos volveremos a separar.~
+@16   = ~La Maldición de Bodhi
+
+Hubo un momento en que pensé que había perdido para siempre a Kitanya en la oscuridad de los brazos de Bodhi. Tengo el gusto de saber que no fue el caso. Ha revivido y volvió a su estado original. Ella se siente muy agradecida.~
+@17   = ~Si, si. M-me guardo las cosas cursis. Os he salvado, pero es todo lo que haré.~
+@18   = ~L-lo siento, Kitanya, pero no tengo más espacio para que podáis uniros al grupo en estos momento. Lo siento.~
+@19   = ~No quiero perder vuestra presencia, <CHARNAME>, pero si realmente deseas que nos separemos... bueno, te amo lo suficiente como pare permitir vuestro espacio.~
+@20   = ~Dudo que las cosas sigan siendo iguales entre nosotros, no obstante.~
+@21   = ~Tal vez fue una decisión apresurada. Quiero que estés a mi lado.~
+@22   = ~Así es mi deseo. Lo siento, Kitanya.~
+@23   = ~¿No tenéis un espacio para mi?  Bueno, <CHARNAME>, si no deseas un nuevo compañero con "rasgos" como los mios, entonces supongo que estáis en vuestro derecho. En caso de que nos separemos dudo de que las cosas entre nosotros vuelvan a ser como ahora.~
+@24   = ~Tal vez fue una decisión apresurada. Quiero que estés a mi lado.~
+@25   = ~Adiós, Kitanya. Desafortunadamente, un guerrero es fácil de reemplazar.~
+@26   = ~Gracias, <CHARNAME>. ¡Puede Corellon acabar con esos malvados que se oponen a nuestra union!~
+@27   = ~(Ves a Kitanya. Al acercarse, notas que no te saluda con los brazos abiertos como esperabas. De hecho, casi puedes ver un aire sospechoso en sus ojos)~
+@28   = ~Vuelve. ¿Qué te trae por aquí?~ [R!KITP02]
+@29   = ~Necesito de tu ayuda.~
+@30   = ~Os tengo unas preguntas.~
+@31   = ~Sólo quería asegurarme que estéis viva. Adiós.~
+@32   = ~Muy bien. Responderé vuestras preguntas.~
+@33   = ~¿Volveréis al grupo?~
+@34   = ~¿Ha pasado algo interesante en el último tiempo?~
+@35   = ~¿Has oído sobre la ubicación de la prisión del los Magos Encapuchados?~
+@36   = ~Eso es todo. Adiós.~
+@37   = ~Acepto tu oferta, <CHARNAME>. Echaba de menos viajar con alguien tan agradable.~
+@38   = ~No creo que sea prudente, <CHARNAME>. Tenéis una tendencia de no apreciar a quienes viajan con vos y no me someteré a que me tratéis nuevamente así.~
+@39   = ~Sin embargo, os deseo la mejor de las suerte en vuestros viajes.~
+@40   = ~No. La Corona de Cobre es el lugar de la ciudad donde se reúnen quienes son demasiado tontos o terco para buscar un nuevo lugar. Estoy convencida de que aquí debe comenzar la búsqueda del origen de la corrupción humana.~
+@41   = ~Si, puede ser. Tengo otras preguntas.~
+@42   = ~Biiien. Evidentemente habéis tenido la mente ocupada. Adiós.~
+@43   = ~Me temo que no. Los Magos Encapuchado con una organización temible, <CHARNAME>, y pocos aquí quieren saber de ellos.~
+@44   = ~Siento mucho oír eso. Tengo otras preguntas.~
+@45   = ~Gracias por la información. Continuaré mi búsqueda en otro lugar.~
+@46   = ~¿Cómo dices?~
+@47   = ~Me gustaría que os unierais al grupo.~
+@48   = ~Necesito que me contestes unas preguntas.~
+@49   = ~Pensándolo bien, olvídalo. Os veré mas tarde.~

@@ -1,0 +1,15 @@
+IF
+  PartyHasItem("r!kitbdy")
+  !Global("r!KitVampire","GLOBAL",4)
+THEN
+  RESPONSE #100
+    SetGlobal("r!KitVampire","GLOBAL",4)
+END
+
+IF
+ Global("R!KitJoined","GLOBAL",0)
+ InParty("r!Kitanya")
+THEN
+ RESPONSE #100
+  SetGlobal("R!KitJoined","GLOBAL",1)
+END

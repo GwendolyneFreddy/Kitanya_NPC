@@ -1,0 +1,141 @@
+@-1006= "Deseas instalar ["
+@0    =~NPC Kitanya y romance MOD para BG2~
+@1    =~Kitanya~
+@2    =~Cuando le preguntáis sobre su pasado, KITANYA entra en un extraño silencio, como si la tristeza la estuviese superando. De repente comienza a hablar, en voz baja, y luchando por mantener su compostura. "Os digo: mi historia es bastante breve de elfos normales y muy trágica. ¿Estáis seguro de que queréis oír esto?"
+
+Cuando respondéis afirmativamente, continúa. "Yo nací muy afortunada. Mis padres vivían en el corazón del reino de los elfos, en la gran ciudad de Suldanessalar".
+
+Podéis ver las gotas de agua que comienzan a formarse en sus bellos ojos verdes, y reanuda su relato. "Sin embargo, no era tan idílico como podría parecer a primera vista. Porque, como ocurre con casi todas las sociedades, los bosques donde nos refugiábamos se llenaron de elfos corrompidos con su propio poder."
+
+Hace una pausa para continuar. Es obvio que comienza a emocionarse. Te acercas a prestarle atención por sus lágrimas, sin embargo, nuevamente comienza a hablar. "Cuando estaba en lo que se consideraría adolescencia, la ciudad cayó bajo la influencia de un ser corrupto. Era un mago muy poderoso, el más poderoso que había conocido sin tener una influencia divina. El estaba buscando algo también, <CHARNAME>."
+
+A medida que continúa contando su historia, está a punto de perder la calma. Dolorosamente, continúa. "Trató de destruir lo que el pueblo elfo más quiere. Quería ser un dios, <CHARNAME>, y le importaba poco el daño que causara durante su ascensión. Una feroz batalla estalló en el Árbol de la Vida y muchos elfos fueron asesinados. Sin embargo, la masacre no terminó allí."
+
+Su calma desapareció, y comienza a acelerar su relato por la emoción. Es una intrigante sensación para vos. "Mi familia y amigos fueron víctimas de esa guerra. Vi a todos ellos ser reducido a polvo por esa arte de magia infernal."
+
+Su voz ha adoptado un tono muy agudo, con una determinación severa que has vuelto a notar: "Me prometí desde ese día a cobrar venganza contra aquel mago y todo quien le sirve. Salí de la ciudad, no quedaba nada para mi en ese lugar, ya incluso el mago se había ido."~
+@3    =~¿Qué necesitáis?~ [R!KITS01]
+@4    =~¿Qué puedo hacer por vos?~ [R!KITS02]
+@5    =~Me esforzaré para ayudaros.~ [R!KITS03]
+@6    =~¿Si?~ [R!KITS04]
+@7    =~¿Necesitáis ayuda?~ [R!KITS05]
+@8    =~¿Tenéis alguna tarea para mi?~ [R!KITS06]
+@9    =~¡Despertarás en el infierno!~ [R!KITS07]
+@10   =~¡Preparaos para reuniros con los dioses!~ [R!KITS08]
+@11   =~¡Se acabó vuestro tiempo!~ [R!KITS09]
+@12   =~¡Nuestras armas se encontrarán con carne hoy!~ [R!KITS10]
+@13   =~Sólo uno sobrevivirá y no seréis vos.~ [R!KITS11]
+@14   = ~Por Supuesto.~ [R!KITS12]
+@15   = ~Así se hará.~ [R!KITS13]
+@16   = ~Admiro tu desempeño.~ [R!KITS14]
+@17   = ~Eso está hecho.~ [R!KITS15]
+@18   = ~Una sabia decisión.~ [R!KITS16]
+@19   = ~Me voy.~ [R!KITS17]
+@20   = ~Vos sois el jefe.~ [R!KITS18]
+@21   = ~(suspiro) Esto me recuerda a casa.~ [R!KITS19]
+@22   = ~Mejor nos mantenenos juntos en este lugar, muchos peligros encontraréis en la oscuridad.~ [R!KITS20]
+@23   = ~Muchas razas corruptas. No debemos permanecer aquí más tiempo del necesario.~ [R!KITS21]
+@24   = ~¡Ah! ¡Nada mas estimulante que el calor del sol sobre tu piel!~ [R!KITS22]
+@25   = ~Viajar por las noches no es mi método preferido, pero supongo que no hay otra opción...~ [R!KITS23]
+@26   = ~No me uní a este grupo para liderar, pero no traicionaré vuestra confianza.~ [R!KITS24]
+@27   = ~¿Por qué estamos sentados de brazos cruzados? Tenemos trabajo por hacer.~ [R!KITS25]
+@28   = ~Vuestras acciones son inquietantemente oscuras. Servios de volver a la luz.~ [R!KITS26]
+@29   = ~No voy a torerar vuestras acciones por mucho tiempo.~ [R!KITS27]
+@30   = ~Vuestras acciones están siendo malas. Mi tiempo aquí ha terminado.~ [R!KITS28]
+@31   = ~Sospechaba que podíais ser un compañero digno.~ [R!KITS29]
+@32   = ~¿Tenéis una orden?~ [R!KITS30]
+@33   = ~Vuestra impresión es inapropiada. Sólo acabáis de conoceros.~ [R!KITS31]
+@34   = ~¡Ay!~ [R!KITS32]
+@35   = ~Me temo que necesitáis asistencia.~ [R!KITS33]
+@36   = ~¡Augh! ¡Corellon protegedme!~ [R!KITS34]
+@37   = ~¡Toma eso!~ [R!KITS35]
+@38   = ~¿Quién aceitó la empuñadura de mi espada?~ [R!KITS36]
+@39   = ~¡Mi espada no puede cortar eso!~ [R!KITS37]
+@40   = ~Temo que mi mochila esta llena. Caray, parece que algo cayó.~ [R!KITS38]
+@41   = ~Estoy fatigada. Sería un buen momento para descansar.~ [R!KITS39]
+@42   = ~¡No moriré aquí! ¡No es mi momento!~ [R!KITS40]
+@43   = ~Elethial~
+@44   = ~Kitanya~
+@45   = ~Hoja Caótica de Corellon~
+@46   = ~Hoja Caótica de Corellon
+Esta poderosa espada fue concedida como una bendición para Kitanya del dios elfo Corellon Larethan. El dios cree firmemente en su búsqueda, y espera que esta espada sirva de ayuda. Además de proteger a Kitanya de ataques mágicos, tiene la capacidad de atacar a los magos atravesando cualquier protección mágicas que esté usando.
+
+CARACTERÍSTICAS:
+
+Daño: 1D8+3, +1 de daño por fuego
+THAC0: bonificación +3
+Especial:
+  +10% de resistencia a la magia
+  Su portador es inmune al veneno
+Sólo puede usarla:
+ Kitanya~
+@47   = ~Escudo de Asesinos de Magos~
+@48   = ~Escudo de Asesinos de Magos
+Originalmente diseñado por elfos alquimistas para ser usado en la lucha contra los drows, este escudo tiene una historia muy sangrienta. Es muy poco conocida, sin embargo. Este escudo ha sido utilizado por muchos, y ha sido un factor decisivo en muchas batallas. A pesar de todo esto, todavía se las arregla para conservar su brillo original. Cómo llegó a manos de Kitanya es un misterio para ti, y no parecen estar muy dispuestos a hablar de ello.
+
+CARACTERÍSTICAS
+
+Bonificación a la clase de armadura: +3
+Bonificación a todas las protecciones: +2
+Sólo puede usarla:
+  Kitanya~
+@49   = ~Portadora de la Venganza: Mallas Plateadas de Kitanya~
+@50   = ~Portadora de la Venganza: Mallas Plateadas de Kitanya
+Esta armadura fue encargada por Kitanya y bendecida por Corellon Larethian y por Rillifane. Está hecha a su medida, lo que le otorga  una máxima libertad de movimiento durante el combate. A pesar de sentirse protegida, esta armadura no quitar la sensualidad de Kitanya y en realidad resulta ser bastante provocadora. Esto podría ser útil en combate para distraer la atención de un enemigo. Debido a que fue encargada con un diseño específico, es poco probable que pueda ser utilizado por otra persona que no sea Kitanya.
+
+CARACTERÍSTICAS
+
+Clase de armadura: -1
+Especial:
+  Bonificación +5% a la resistencia mágica
+  Su portador tiene libertad de acción
+Sólo puede usarla:
+  Kitanya~
+@51   = ~Cuerpo de Kitanya~
+@52   = ~Cuerpo de Kitanya~
+@53   = ~La Historia del Exilio
+Este es el cuerpo de Kitanya. Lo has recuperado luego de verte obligado a matarla en la batalla contra Bodhi. Ha sido infectada con el vampirismo, por lo que debes encontrar una forma de curarla si deseas estar con tu amor de nuevo.~
+@54   = ~Es raro para los elfos que acepten una explicación de los vergonzosos eventos que os hacen conocidos entre los forasteros. Es menos frecuente aún que esas explicaciones vengan de un elfo involucrado. El hecho de que Kitanya este dispuesta a compartir con vosotros este tomo es evidencia de algún lazo entre los dos.
+
+El libro dedica muchas páginas a la descripción de los acontecimientos que la llevaron a tomarlo de forma inmediata. Aunque estos fenómenos pueden resultar una interesante lectura, los saltas debido a la falta de tiempo. La base de la historia es simplemente que un elfo de nombre Jonaleth fue corrompido por un miembro de la familia y se obsesionó con su ascensión a la divinidad.
+
+Su intento le costó la vida a muchos elfos de vivían cerca. Tomó un gran ejército para someter al pueblo, aun así sólo después de una gran batalla. Muchos consideraron que por la participación de Jonaleth debía ser condenado a muerte, pero Ellesime se compadeció de él. Con la asistencia de los Seldarine, que lo despojaron de todos los aspectos de su herencia y lo expulsaron de la ciudad por un período indefinido.~
+@55   = ~Anillo de los Seldarine~
+@56   = ~Anillo de los Seldarine
+Este anillo fue una bendición para los guerreros elfos que tratan de proteger su reino de la magia insidiosa de los drows. Aumenta la resistencia de su portador a los elementos y concede una ligera capacidad de resistir los ataques mágicos. Debido a los niveles de beneficios de este anillo, sólo puede ser usado por unos pocos.
+
+CARACTERÍSTICAS
+
+Especial:
+  +25% de resistencia al ácido
+  +10% de resistencia al fuego
+  +10% de resistencia al frio
+  +10% de resistencia al daño mágico
+Sólo usable por:
+  Kitanya~
+@57   = ~Hechizar persona~
+@58   = ~Corregir errores del Asesino de Magos~
+@59   = ~El MOD de Kitanya ya esta instalado~
+@60   = ~Copiando un archivo para determinar si está instalado otro MOD de Kitanya.~
+@61   = ~Este componente ya está instalado.~
+@62   = ~Mejoras del Asesino de Magos.~
+@63   = ~Este componente ya está instalado.~
+@64   = ~ASESINO DE MAGOS: es un luchador que ha centrado sus esfuerzos hacia la destrucción de los lanzadores de conjuros. Ellos creen que hechiceros y (en menor medida) sacerdotes representan un peligro real para toda la comunidad: el estudio de la magia es muy exigente en la mente, y debilitador (o tentador) para las personas que pueden fácilmente generar un gran caos y una carnicería antes de que pueda ser contenidas. Por esta razón, deben llevarse a cabo métodos estrictos de control, y algunos guardianes deben estar entrenados para superar a cualquier lanzador de conjuros deshonestos. Los Asesinos de Magos han estudiado suficiente las artes místicas como para ser capaces de desafiarlos: pueden "devolver" los efectos de hechizos hostiles con el fin de evitar ser perjudicados por ellos, aprenden a evaluar la verdadera posición de un mago astuto que utiliza una ilusión para protegerse, y puedan concentrar su propia energía vital en una fuerza negativa que pueda causar al lanzador de conjuros perder su concentración, estos hechizos pueden ser interrumpido mediante algun arma a distancia que en parte busca ensordece al lanzador de conjuros, o a través de un golpe físico. Por supuesto, con todo ese tiempo dedicado al estudio el lanzamiento de conjuros, los Asesinos de Magos tienen pocas oportunidades para prácticas técnicas de combate real, que es lo que restringe a un Asesino de Magos de poder ser tan hábil con las armas como un verdadero luchador puede. Asimismo, debido a su odio a los encantamiento y de sus resultados, se niega absolutamente a utilizar una amplia gama de objetos mágicos, a pesar que estén familiarizados con las artes arcanas se les permite utilizar ciertos elementos que un luchador común no puede.
+
+VENTAJAS:
+* Ganan un 2% de resistencia mágica por nivel
+* Ganan un 1% de resistencia al daño mágico por nivel
+* Bonificación -2 de protección contra varítas y hechizos
+* Con cada golpe que acierten producen que la victima falle sus conjuros, comenzando a nivel 5 con un 5% por golpe, aumentando 5% cada 5 niveles (no es seguro si logra realizar eso)
+* Puede usar la habilidad Detectar Ilusiones del ladrón, comenzando a nivel 1 con un 3%, aumentando 3% cada nivel hasta el 20. Posterior a ese nivel aumenta 2% por nivel.
+* Habilidad innata del Aura Antimagia usable 1 vez por día por cada 12 niveles. Todo hechizo dentro de un radio de 15 pies del Asesino de Magos se disipa al instante, y todas las criaturas dentro de este rango serán afectados por Sordera, sufriendo un 50% de error al lanzamiento de conjuros (acumulables con otras formas) durante 6 horas. El Asesino de Magos pierde del aliento (penalización +2 al THAC0, a la Clase de armadura y a las tiradas de salvación) por la misma cantidad de tiempo después de usar esta habilidad
+
+DESVENTAJAS:
+* Penalización +1 del THAC0 cada 5 niveles (hasta el nivel 20)
+* No puede usar objetos mágicos como anillos, amuletos, guantes, fajas, capas o botas, excepciones que serían más útiles al combatir contra los lanzadores de conjuros.
+* No puede usar NUNGÚN objeto que lance hechizos, a menos que estoa artículos o hechizos sean antihechiceros por naturaleza.
+* Penalización +1 a protección contra la muerte, contra polimorfismos y contra armas de aliento.
+* Limitado a Maestro (***) en todas las armas
+* Limitado a Competente (*) en todos los estilos de lucha~
+@65   = ~Espada Flameante de Kitanya~
+@66   = ~1PP v3 o posterior debe estar instalado para Espada Flameante!~
