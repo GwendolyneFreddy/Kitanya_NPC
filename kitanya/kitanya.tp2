@@ -111,7 +111,7 @@ ALWAYS
 
  AT_INTERACTIVE_EXIT ~VIEW kitanya/readme-kitanya.html~
 
-END // ALWAYS
+END // of ALWAYS BLOCK
 
 ALLOW_MISSING ~SOLAVAMP.DLG~
 
@@ -131,6 +131,7 @@ LANGUAGE ~Espanol (traduccion por Pattoko at ClanDLAN.net)~
  *  Kitanya Conversation/Romance Mod for BG2  *
  * ========================================== */
 BEGIN @0
+DESIGNATED 0 LABEL ~kitanya_npc~
 
 ACTION_IF FILE_EXISTS ~override/r#Kitanya.rpgd~
  THEN BEGIN
@@ -143,12 +144,11 @@ ACTION_IF FILE_EXISTS ~override/r#Kitanya.rpgd~
 INCLUDE ~%MOD_FOLDER%/lib/main_component.tpa~
 
 
-
-/*
- * Wizardslayer Bug Fixes
- */
-
-BEGIN @58
+/* ========================= *
+ *  Wizard Slayer Bug Fixes  *
+ * ========================= */
+BEGIN @1
+DESIGNATED 01 LABEL ~kitanya_wizard_slayer_fix~
 
 ACTION_IF FILE_EXISTS ~override/r#WizardslayerFixes.rpgd~
  THEN BEGIN
@@ -177,11 +177,12 @@ COPY_EXISTING ~SCRL03.ITM~ ~override~
  WRITE_BYTE 0x2f ("%usability%" BOR "0b00000010")
 BUT_ONLY_IF_IT_CHANGES
 
-/*
- * Kitanya's Flaming Sword (from 1PP)
- */
 
-BEGIN @65 // Code stolen from Nythrun and bastardized!
+/* ==================================== *
+ *  Kitanya's Flaming Sword (from 1PP)  *
+ * ==================================== */
+BEGIN @2 // Code stolen from Nythrun and bastardized!
+DESIGNATED 2 LABEL ~kitanya_flaming_sword~
 REQUIRE_COMPONENT ~1pp_flamingswords/1pp_flamingswords.tp2~ ~0~ @66
 
 ACTION_IF FILE_EXISTS ~override/r#KitanyaFlamingSword.rpgd~

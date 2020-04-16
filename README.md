@@ -103,6 +103,7 @@ Kitanya_NPC
 
 - Renamed *setup-Kitanya.tp2* -> *kitanya.tp2* to support AL|EN's "Project Infinity".
 - Externalized tp2 code into *main_component.tpa* library for more comfortable readability and maintenance.
+- Added components `DESIGNATED` numbers and "*kitanya_npc*", "*kitanya_wizard_slayer_fix*" and "*kitanya_flaming_sword*" `LABELS`.
 - Included BWP Fixpack patches:
 	- r!kitele.baf: <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486802">Lollorian's ForceSpellRES corrections<a> (replaced *ga_somespell* with *somespell*).
 	- kitanyaj.d and kitya.d: <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482945">Lollorian's GLOBAL fixes</a> (replaced *GLOBALS* variable with *GLOBAL*).
@@ -153,7 +154,7 @@ Kitanya_NPC
 
 #### Version 6.2.1 (28 June, 2005)
 
-- Fixed the problem with the Wizard Slayer Enhancements not installing.  This issue only affects PC versions.
+- Fixed the problem with the Wizard Slayer Enhancements not installing. This issue only affects PC versions.
 
 ## 
 
