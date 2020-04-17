@@ -102,12 +102,13 @@ Kitanya_NPC
 #### Version 6.5 (day month, 2020)
 
 - Renamed *setup-Kitanya.tp2* -> *kitanya.tp2* to support AL|EN's "Project Infinity".
-- Externalized tp2 code into *main_component.tpa* library for more comfortable readability and maintenance.
 - Added components `DESIGNATED` numbers and "*kitanya_npc*", "*kitanya_wizard_slayer_fix*" and "*kitanya_flaming_sword*" `LABELS`.
+- Externalized tp2 code into *main_component.tpa* library for more comfortable readability and maintenance.
 - Included BWP Fixpack patches:
 	- r!kitele.baf: <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486802">Lollorian's ForceSpellRES corrections<a> (replaced *ga_somespell* with *somespell*).
 	- kitanyaj.d and kitya.d: <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482945">Lollorian's GLOBAL fixes</a> (replaced *GLOBALS* variable with *GLOBAL*).
 	- kitanyaj.d: Made sure all instances of "*!Dead("R#Kitanya)*" have been replaced with "*!Dead("R#Kitanya")*".
+- Cleaned up old ids entries patch (action) replaced with more recent BG2 Fixpack one.
 - Removed useless backup folder.
 - Reorganized mod architecture tree: created "*lang*" and "*cre*" folders to sort files according to their types.
 - Lower cased files.

@@ -2,172 +2,214 @@
  *         MAIN COMPONENT INSTALLATION         *
  * =========================================== */
 
+
+// Adds ToB trigger/actions to SoA games.
+INCLUDE ~kitanya/lib/tob2soa.tph~
+
+/* ---------------------------------- *
+ *  Installing dialogues and scripts  *
+ * ---------------------------------- */
+
+// Compiling dialogues...
+COMPILE ~kitanya/dialogues~
+
+// Compiling scripts...
+
+
+
+/* ---------------------- *
+ *  Installing portraits  *
+ * ---------------------- */
+// We want portraits in the game, right?
+
+COPY ~kitanya/portraits~ ~override~
+
+
 /* ---------------------- *
  *  Installing creatures  *
  * ---------------------- */
 
 // Kitanya
-// -------
-COPY ~kitanya/cre/r!kit07.cre~ ~override~  // I ignore the Picked Pocket and Set-Traps sounds as they will never be used.
+COPY ~kitanya/cre/r!kit07.cre~ ~override~
      ~kitanya/cre/r!kit09.cre~ ~override~
      ~kitanya/cre/r!kit11.cre~ ~override~
      ~kitanya/cre/r!kit13.cre~ ~override~
      ~kitanya/cre/r!kit15.cre~ ~override~
-	SAY NAME1 @1 /* Kitanya */
-	SAY NAME2 @1
+	SAY NAME1 @101 /* Kitanya */
+	SAY NAME2 @101
 
-	SAY BIO @2
-	SAY SELECT_COMMON1 @3		// ~What do you need?~ [r!kits01]
-	SAY SELECT_COMMON2 @4		// ~What can I do for you?~ [r!kits02]
-	SAY SELECT_COMMON3 @5		// ~I shall endeavor to assist you.~ [r!kits03]
-	SAY SELECT_COMMON4 @6		// ~Yes?~ [r!kits04]
-	SAY SELECT_COMMON5 @7		// ~Do you need assistance?~ [r!kits05]
-	SAY SELECT_COMMON6 @8		// ~Do you have a task for me?~ [r!kits06]
-	SAY BATTLE_CRY1 @9			// ~You shall awaken in hell!~ [r!kits07]
-	SAY BATTLE_CRY2 @10			// ~Prepare to meet your gods!~ [r!kits08]
-	SAY BATTLE_CRY3 @11			// ~Your time is at an end!~ [r!kits09]
-	SAY BATTLE_CRY4 @12			// ~Our swords meet flesh today!~ [r!kits10]
-	SAY BATTLE_CRY5 @13			// ~Only one of us shall survive and it shall not be you.~ [r!kits11]
-	SAY SELECT_ACTION1 @14		// ~Of course.~ [r!kits12]
-	SAY SELECT_ACTION2 @15		// ~It shall be done.~ [r!kits13]
-	SAY SELECT_ACTION3 @16		// ~I shall perform admirably~ [r!kits14]
-	SAY SELECT_ACTION4 @17		// ~Consider it done.~ [r!kits15]
-	SAY SELECT_ACTION5 @18		// ~A wise decision.~ [r!kits16]
-	SAY SELECT_ACTION6 @19		// ~I am off.~ [r!kits17]
-	SAY SELECT_ACTION7 @20		// ~You're the boss.~ [r!kits18]
-	SAY AREA_FOREST @21			// ~(sigh) This so reminds me of home.~ [r!kits19]
-	SAY AREA_DUNGEON @22		// ~Best stay together in this place, many dangers lie in the dark.~ [r!kits20]
-	SAY AREA_CITY @23			// ~Crowds breed corruption. Let us not stay here longer than necessary.~ [r!kits21]
-	SAY AREA_DAY @24			// ~Ah! There is nothing more refreshing than the hot sun upon your skin!~ [r!kits22]
-	SAY AREA_NIGHT @25			// ~Travelling by night is not my preferred method, but I suppose we have little choice...~ [r!kits23]
-	SAY LEADER @26				// ~I did not join this group to lead, but I shall not betray your trust.~ [r!kits24]
-	SAY BORED @27				// ~Why are we sitting here twiddling our thumbs? There's work to be done.~ [r!kits25]
-	SAY UNHAPPY_ANNOYED @28		// ~Your actions are disturbingly dark. Kindly return to the light.~ [r!kits26]
-	SAY UNHAPPY_SERIOUS @29		// ~I shall not tolerate your actions for long.~ [r!kits27]
-	SAY UNHAPPY_BREAKING @30	// ~Your actions are truly evil. My time here is at an end.~ [r!kits28]
-	SAY HAPPY @31				// ~I suspected that you would prove a worthy companion.~ [r!kits29]
-	SAY SELECT_RARE1 @32		// ~Do you have an order?~ [r!kits30]
-	SAY SELECT_RARE2 @33		// ~Your touching is inappropriate. We only just met.~ [r!kits31]
-	SAY DAMAGE @34				// ~Ow!~ [r!kits32]
-	SAY HURT @35				// ~I fear that I require assistance.~ [r!kits33]
-	SAY DYING @36				// ~Augh! Corellian watch over me!~ [r!kits34]
-	SAY CRITICAL_HIT @37		// ~Take this!~ [r!kits35]
-	SAY CRITICAL_MISS @38		// ~Who oiled the hilt of my sword?~ [r!kits36]
-	SAY TARGET_IMMUNE @39		// ~My sword cannot scratch this thing!~ [r!kits37]
-	SAY INVENTORY_FULL @40		// ~I fear that my pack is full. Darn, it appears that something has fallen out.~ [r!kits38]
-	SAY TIRED @41				// ~I grow fatigued. Rest would be a welcome opportunity.~ [r!kits39]
-	SAY MORALE @42				// ~I shall not fall here! It is not my time!~ [r!kits40]
- WRITE_ASCII DEATHVAR ~R#KITANYA~
- WRITE_ASCII DIALOG ~R#KITYA~
+	WRITE_ASCII DEATHVAR ~R#KITANYA~ #32
+	WRITE_ASCII DIALOG ~R#KITYA~ #8
+
+	SAY BIO @102
+	SAY MORALE @142					// ~I shall not fall here! It is not my time!~ [r!kits40]
+	SAY HAPPY @131					// ~I suspected that you would prove a worthy companion.~ [r!kits29]
+	SAY UNHAPPY_ANNOYED @128		// ~Your actions are disturbingly dark. Kindly return to the light.~ [r!kits26]
+	SAY UNHAPPY_SERIOUS @129		// ~I shall not tolerate your actions for long.~ [r!kits27]
+	SAY UNHAPPY_BREAKING_POINT @130	// ~Your actions are truly evil. My time here is at an end.~ [r!kits28]
+	SAY LEADER @126					// ~I did not join this group to lead, but I shall not betray your trust.~ [r!kits24]
+	SAY TIRED @141					// ~I grow fatigued. Rest would be a welcome opportunity.~ [r!kits39]
+	SAY BORED @127					// ~Why are we sitting here twiddling our thumbs? There's work to be done.~ [r!kits25]
+	SAY BATTLE_CRY1 @109			// ~You shall awaken in hell!~ [r!kits07]
+	SAY BATTLE_CRY2 @110			// ~Prepare to meet your gods!~ [r!kits08]
+	SAY BATTLE_CRY3 @111			// ~Your time is at an end!~ [r!kits09]
+	SAY BATTLE_CRY4 @112			// ~Our swords meet flesh today!~ [r!kits10]
+	SAY BATTLE_CRY5 @113			// ~Only one of us shall survive and it shall not be you.~ [r!kits11]
+	SAY DAMAGE @134					// ~Ow!~ [r!kits32]
+	SAY DYING @136					// ~Augh! Corellian watch over me!~ [r!kits34]
+	SAY HURT @135					// ~I fear that I require assistance.~ [r!kits33]
+	SAY AREA_FOREST @121			// ~(sigh) This so reminds me of home.~ [r!kits19]
+	SAY AREA_CITY @123				// ~Crowds breed corruption. Let us not stay here longer than necessary.~ [r!kits21]
+	SAY AREA_DUNGEON @122			// ~Best stay together in this place, many dangers lie in the dark.~ [r!kits20]
+	SAY AREA_DAY @124				// ~Ah! There is nothing more refreshing than the hot sun upon your skin!~ [r!kits22]
+	SAY AREA_NIGHT @125				// ~Travelling by night is not my preferred method, but I suppose we have little choice...~ [r!kits23]
+	SAY SELECT_COMMON1 @103			// ~What do you need?~ [r!kits01]
+	SAY SELECT_COMMON2 @104			// ~What can I do for you?~ [r!kits02]
+	SAY SELECT_COMMON3 @105			// ~I shall endeavor to assist you.~ [r!kits03]
+	SAY SELECT_COMMON4 @106			// ~Yes?~ [r!kits04]
+	SAY SELECT_COMMON5 @107			// ~Do you need assistance?~ [r!kits05]
+	SAY SELECT_COMMON6 @108			// ~Do you have a task for me?~ [r!kits06]
+	SAY SELECT_ACTION1 @114			// ~Of course.~ [r!kits12]
+	SAY SELECT_ACTION2 @115			// ~It shall be done.~ [r!kits13]
+	SAY SELECT_ACTION3 @116			// ~I shall perform admirably~ [r!kits14]
+	SAY SELECT_ACTION4 @117			// ~Consider it done.~ [r!kits15]
+	SAY SELECT_ACTION5 @118			// ~A wise decision.~ [r!kits16]
+	SAY SELECT_ACTION6 @119			// ~I am off.~ [r!kits17]
+	SAY SELECT_ACTION7 @120			// ~You're the boss.~ [r!kits18]
+	SAY SELECT_RARE1 @132			// ~Do you have an order?~ [r!kits30]
+	SAY SELECT_RARE2 @133			// ~Your touching is inappropriate. We only just met.~ [r!kits31]
+	SAY CRITICAL_HIT @137			// ~Take this!~ [r!kits35]
+	SAY CRITICAL_MISS @138			// ~Who oiled the hilt of my sword?~ [r!kits36]
+	SAY TARGET_IMMUNE @139			// ~My sword cannot scratch this thing!~ [r!kits37]
+	SAY INVENTORY_FULL @140			// ~I fear that my pack is full. Darn, it appears that something has fallen out.~ [r!kits38]
+	// I ignore the Picked Pocket and Set-Traps sounds as they will never be used.
+BUT_ONLY
 
 // Elethial
-// --------
 COPY ~kitanya/cre/r!kitele.cre~ ~override~
-	SAY NAME1 @43 /* Elethial */
-	SAY NAME2 @43
- WRITE_ASCII DEATHVAR ~R#ELETHIAL~
- WRITE_ASCII DIALOG ~R#KITELE~
+	SAY NAME1 @151 /* Elethial */
+	SAY NAME2 @151
+	WRITE_ASCII DEATHVAR ~R#ELETHIAL~ #32
+	WRITE_ASCII DIALOG ~R#KITELE~ #8
+BUT_ONLY
 
-// Kitanya
-
+// Vampire Kitanya
 COPY ~kitanya/cre/r!kitvmp.cre~ ~override~
 	SAY NAME1 @1 /* Kitanya */
 	SAY NAME2 @1
- WRITE_ASCII DEATHVAR ~R#KITVAMP~
- WRITE_ASCII DIALOG ~R#KITELE~
+	WRITE_ASCII DEATHVAR ~R#KITVAMP~ #32
+ WRITE_ASCII DIALOG ~R#KITELE~ #8
 
-// Copying Items
 
+/* ------------------ *
+ *  Installing items  *
+ * ------------------ */
+
+// Corellon's Chaotic Blade +3
 COPY ~kitanya/items/r!kitswd.itm~ ~override~
-	SAY NAME2 @45
-	SAY DESC @46
-
+	SAY NAME2 @161
+	SAY DESC @162
+BUT_ONLY
+protection poison
+63 resis ùagie
+// Mage Slayer Shield
 COPY ~kitanya/items/r!kitshd.itm~ ~override~
-	SAY NAME2 @47
-	SAY DESC @48
+	SAY NAME2 @163
+	SAY DESC @164
+BUT_ONLY
+verif couleurs
 
+// Bringer of Vengeance: Kitanya's Plate Mail
 COPY ~kitanya/items/r!kitplt.itm~ ~override~
-	SAY NAME2 @49
-	SAY DESC @50
+	SAY NAME2 @165
+	SAY DESC @166
+BUT_ONLY
 
+// Kitanya's Body
 COPY ~kitanya/items/r!kitbdy.itm~ ~override~
-	SAY NAME1 @51
-	SAY NAME2 @51
-	SAY DESC @52
+	SAY NAME1 @167
+	SAY NAME2 @167
+	SAY DESC @168
+BUT_ONLY
 
+// The History of the Exile
 COPY ~kitanya/items/r!kitrbk.itm~ ~override~
-	SAY NAME1 @53
-	SAY NAME2 @53
-	SAY DESC @54
+	SAY NAME1 @169
+	SAY NAME2 @169
+	SAY DESC @170
+BUT_ONLY
+removed magical flag - restriction flags - header (arrow!)
 
+// Ring of the Seldarine
 COPY ~kitanya/items/r!kitrng.itm~ ~override~
-	SAY NAME2 @55
-	SAY DESC @56
+	SAY NAME2 @171
+	SAY DESC @172
+BUT_ONLY
+28 ou 123
+
+
+/* ------------------- *
+ *  Installing spells  *
+ * ------------------- */
+
+// Let's bring over the innates
+COPY ~kitanya/spells/r!kitcrm.spl~ ~override~
+	SAY NAME1 @181
+
+COPY ~kitanya/spells/r!kitdrw.spl~ ~override~
+     ~kitanya/spells/r!kitnrm.spl~ ~override~
+todo is_ee
+
+
+/* ---------------------------------- *
+ *  Installing dialogues and scripts  *
+ * ---------------------------------- */
 
 // Modifying In-Game Scripts
 
-EXTEND_TOP ~AR1105.bcs~ ~kitanya/appends/kitspawn.baf~
+EXTEND_TOP ~ar1105.bcs~ ~kitanya/appends/kitspawn.baf~
 
-EXTEND_TOP ~Anomen.bcs~ ~kitanya/appends/anoscript.baf~
+EXTEND_TOP ~anomen.bcs~ ~kitanya/appends/anoscript.baf~
 
-/* EXTEND_TOP ~Valygar.bcs~ ~kitanya/appends/valygar.baf~ */ // To be incorporated once Valygar romance is finished.
+/* EXTEND_TOP ~valygar.bcs~ ~kitanya/appends/valygar.baf~ */ // To be incorporated once Valygar romance is finished.
 
-EXTEND_BOTTOM ~AR0406.bcs~ ~kitanya/appends/AR0406.baf~
+EXTEND_BOTTOM ~ar0406.bcs~ ~kitanya/appends/ar0406.baf~
 
 /* EXTEND_TOP ~cleanse.bcs~ ~kitanya/appends/revive.baf~ */ // To be incorporated once romance is finished.
 
-EXTEND_TOP ~AR0809.bcs~ ~kitanya/appends/AR0809.baf~
+EXTEND_TOP ~ar0809.bcs~ ~kitanya/appends/ar0809.baf~
 
 EXTEND_TOP ~baldur.bcs~ ~kitanya/appends/kbaldur.baf~
 
 EXTEND_TOP ~edwin.bcs~ ~kitanya/appends/eddy.baf~
 
-EXTEND_TOP ~AR1100.bcs~ ~kitanya/appends/ar1100.baf~
+EXTEND_TOP ~ar1100.bcs~ ~kitanya/appends/ar1100.baf~
 
 COMPILE ~kitanya/scripts~
 
-// We want portraits in the game, right?
 
-COPY ~kitanya/graphics~ ~override~
-
-// Now for the dialogues
-
-COMPILE ~kitanya/dialogues~
-
+/* ------------------------ *
+ *  Installing audio files  *
+ * ------------------------ */
 // Sound files come next.  After all, what's an NPC with no soundset?
 
 COPY ~kitanya/sounds~ ~override~
 
-// Let's bring over the innates
 
-COPY ~kitanya/spells/r!kitcrm.spl~ ~override~
-	SAY NAME1 @57
+/* ----------------- *
+ *  Appending files  *
+ * ----------------- */
 
-COPY ~kitanya/spells/r!kitdrw.spl~ ~override~
-     ~kitanya/spells/r!kitnrm.spl~ ~override~
+APPEND ~pdialog.2da~ ~R#Kitanya R#kityP R#kityJ KitanyaD~ UNLESS ~R#Kitanya~ UNLESS ~25POST~
+APPEND ~pdialog.2da~ ~R#Kitanya R#kityP R#kityJ kitanyaD R#KIT25P R#KIT25J KitanyaD~ UNLESS ~R#Kitanya~ IF ~25POST~ // missing R#KIT25 ???
 
-// Now is the hard part.  Actually appending to the files so that the game recognises her.
+APPEND ~interdia.2da~ ~R#Kitanya R#kityB~ UNLESS ~R#Kitanya~ UNLESS ~25FILE~
+APPEND ~interdia.2da~ ~R#Kitanya R#kityB R#KIT25B~ UNLESS ~R#Kitanya~ IF ~25FILE~
 
-APPEND ~pdialog.2da~
-~R#Kitanya     R#kityP     R#kityJ     KitanyaD~
-UNLESS ~R#Kitanya~
-UNLESS ~25POST~
 
-APPEND ~pdialog.2da~
-~R#Kitanya     R#kityP     R#kityJ     kitanyaD     R#KIT25P     R#KIT25J     KitanyaD~
-UNLESS ~R#Kitanya~
-IF ~25POST~
-
-APPEND ~interdia.2da~
-~R#Kitanya     R#kityB~
-UNLESS ~R#Kitanya~
-UNLESS ~25FILE~
-
-APPEND ~interdia.2da~
-~R#Kitanya     R#kityB     R#KIT25B~
-UNLESS ~R#Kitanya~
-IF ~25FILE~
-
+/* ------------------------ *
+ *  Installing audio files  *
+ * ------------------------ */
 ACTION_IF (("%WEIDU_OS%" STRING_COMPARE_CASE "osx") = 0)
  THEN BEGIN
   AT_INTERACTIVE_EXIT ~sh Kitanya/install.sh~

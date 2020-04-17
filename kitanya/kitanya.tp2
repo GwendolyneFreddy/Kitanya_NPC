@@ -22,24 +22,6 @@ ALWAYS
    THEN BEGIN
       COPY_EXISTING ~SW1H01.itm~ ~override/iplot04i.itm~
     END
-  ACTION_IF NOT FILE_EXISTS ~data/25dialog.bif~ // If ToB is not installed
-   THEN BEGIN
-  APPEND ~ACTION.IDS~
-~31 SpellRES(S:RES*,O:Target*)
-95 SpellPointRES(S:RES*,P:Target*) 
-113 ForceSpellRES(S:RES*,O:Target)
-114 ForceSpellPointRES(S:RES*,P:Target)
-160 ApplySpellRES(S:RES*,O:Target)
-181 ReallyForceSpellRES(S:RES*,O:Target) 
-191 SpellNoDecRES(S:RES*,O:Target*)
-192 SpellPointNoDecRES(S:RES*,P:Target*) 
-240 ReallyForceSpellDeadRES(S:RES*,O:Target)
-318 ForceSpellRangeRES(S:RES*,O:Target)
-319 ForceSpellPointRangeRES(S:RES*,P:Target)
-337 ReallyForceSpellPointRES(S:RES*,P:Target*)
-338 SetCutSceneLite(I:BOOL*BOOLEAN)~
-  BUT_ONLY_IF_IT_CHANGES
-  UNLESS ~31 SpellRES(S:RES*,O:Target*)~
  END // ACTION_IF
  // KIT.IDS Patch (Thanks, CamDawg!)
  COPY_EXISTING_REGEXP GLOB ~^anomen[0-9]*\.cre~ ~override~
