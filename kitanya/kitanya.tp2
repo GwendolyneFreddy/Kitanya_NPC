@@ -76,7 +76,7 @@ END
 
 
 /* ==================================== *
- *  Kitanya's Flaming Sword (from 1PP)  *
+ *  Kitanya"s Flaming Sword (from 1PP)  *
  * ==================================== */
 BEGIN @2 // Code stolen from Nythrun and bastardized!
 DESIGNATED 2 LABEL ~kitanya_flaming_sword~
@@ -89,87 +89,4 @@ ACTION_IF FILE_EXISTS ~override/r#KitanyaFlamingSword.rpgd~
   COPY_EXISTING ~SW1H01.ITM~ ~override/r#KitanyaFlamingSword.rpgd~
  END
 
-COPY_EXISTING ~r!kitswd.itm~ ~override~
- SAY NAME2 @45
- WRITE_ASCII 0x22 ~FS~ #2
-  PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN
-   READ_LONG  0x64 "ho"
-   READ_SHORT 0x68 "hc"
-   READ_LONG  0x6a "eo"
-   READ_SHORT 0x70 "ge"
-   SET "blade" = 0x9fefff00
-   SET "grip"  = 0x20a5da00
-   SET "minor" = 0x3f00ff00
-   SET "blade2" = 0xc
-   SET "grip2"  = 0x73
-   SET "minor2" = 0x73
-   PATCH_IF ("blade" != 0x00) THEN BEGIN
-    INSERT_BYTES ("eo" + (0x30 * "ge") + 0x00) 0x30
-    WRITE_SHORT  ("eo" + (0x30 * "ge") + 0x00) 0x08
-    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x02) 0x01
-    WRITE_LONG   ("eo" + (0x30 * "ge") + 0x04) "blade"
-    WRITE_LONG   ("eo" + (0x30 * "ge") + 0x08) 0x10
-    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x0c) 0x02
-    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x12) 0x64
-    SET "ge" += 0x01
-   END
-   PATCH_IF ("grip" != 0x00) THEN BEGIN
-    INSERT_BYTES ("eo" + (0x30 * "ge") + 0x00) 0x30
-    WRITE_SHORT  ("eo" + (0x30 * "ge") + 0x00) 0x08
-    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x02) 0x01
-    WRITE_LONG   ("eo" + (0x30 * "ge") + 0x04) "grip"
-    WRITE_LONG   ("eo" + (0x30 * "ge") + 0x08) 0x14
-    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x0c) 0x02
-    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x12) 0x64
-    SET "ge" += 0x01
-   END
-   PATCH_IF ("minor" != 0x00) THEN BEGIN
-    INSERT_BYTES ("eo" + (0x30 * "ge") + 0x00) 0x30
-    WRITE_SHORT  ("eo" + (0x30 * "ge") + 0x00) 0x08
-    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x02) 0x01
-    WRITE_LONG   ("eo" + (0x30 * "ge") + 0x04) "minor"
-    WRITE_LONG   ("eo" + (0x30 * "ge") + 0x08) 0x15
-    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x0c) 0x02
-    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x12) 0x64
-    SET "ge" += 0x01
-   END
-   PATCH_IF ("blade2" != 0x00) THEN BEGIN
-    INSERT_BYTES ("eo" + (0x30 * "ge") + 0x00) 0x30
-    WRITE_SHORT  ("eo" + (0x30 * "ge") + 0x00) 0x07
-    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x02) 0x01
-    WRITE_LONG   ("eo" + (0x30 * "ge") + 0x04) "blade2"
-    WRITE_LONG   ("eo" + (0x30 * "ge") + 0x08) 0x10
-    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x0c) 0x02
-    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x12) 0x64
-    SET "ge" += 0x01
-   END
-   PATCH_IF ("grip2" != 0x00) THEN BEGIN
-    INSERT_BYTES ("eo" + (0x30 * "ge") + 0x00) 0x30
-    WRITE_SHORT  ("eo" + (0x30 * "ge") + 0x00) 0x07
-    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x02) 0x01
-    WRITE_LONG   ("eo" + (0x30 * "ge") + 0x04) "grip2"
-    WRITE_LONG   ("eo" + (0x30 * "ge") + 0x08) 0x14
-    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x0c) 0x02
-    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x12) 0x64
-    SET "ge" += 0x01
-   END
-   PATCH_IF ("minor2" != 0x00) THEN BEGIN
-    INSERT_BYTES ("eo" + (0x30 * "ge") + 0x00) 0x30
-    WRITE_SHORT  ("eo" + (0x30 * "ge") + 0x00) 0x07
-    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x02) 0x01
-    WRITE_LONG   ("eo" + (0x30 * "ge") + 0x04) "minor2"
-    WRITE_LONG   ("eo" + (0x30 * "ge") + 0x08) 0x15
-    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x0c) 0x02
-    WRITE_BYTE   ("eo" + (0x30 * "ge") + 0x12) 0x64
-    SET "ge" += 0x01
-   END
-   PATCH_IF (("blade" != 0x00) OR ("grip" != 0x00) OR ("minor" != 0x00)) THEN BEGIN
-    WRITE_SHORT 0x70 "ge"
-    FOR ("i1" = 0x00; "i1" < (0x38 * "hc"); "i1" += 0x38) BEGIN
-     WRITE_SHORT ("ho" + "i1" + 0x20) "ge"
-     READ_SHORT  ("ho" + "i1" + 0x1e) "ec"
-     SET "ge" += "ec"
-    END
-   END
-  END
- BUT_ONLY_IF_IT_CHANGES
+INCLUDE ~%MOD_FOLDER%/lib/kitanya_fs.tpa~
