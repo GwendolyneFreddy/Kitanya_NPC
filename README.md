@@ -56,6 +56,25 @@ Kitanya_NPC
 
 ## <a name="components" id="components"></a>Components
 
+The installer includes the following components. The number of each is the component DESIGNATED number which gives it a fixed install position and allows automated installers to specify component choices.<br /><br />
+
+
+**0. Kitanya Conversation/Romance mod for BG2**<br /> (Main component)
+
+This component installs the NPC herself. It includes all of the new dialogues, sounds, spells, items, etc.
+
+## 
+
+**1. Wizard Slayer Bugs Fix**<br />
+
+Bioware made a mistake when coding the "*Protection from...*" scrolls that are found throughout Baldur's Gate II. Although the descriptions say that wizard slayers cannot use these scrolls, they actually can. This bug is not fixed by either the official patches or by Baldurdash. Installing this component will fix the problem. After installing this component, wizard slayers will no longer be able to use these scrolls (as it should be).
+
+## 
+
+**2. Flaming Sword for Kitanya**<br /> (requires the main component)
+
+One Pixel Productions introduced new graphics for a flaming sword a few years ago. It applied the flaming graphics to swords included with the original game, but not mods. This component adds these new effects to Kitanya's flaming sword. Please note that this component requires that 1PPv3.0 Flaming Swords be installed.
+
 <div align="right"><a href="#top">Back to top</a></div>
 
 
@@ -108,6 +127,8 @@ Kitanya_NPC
 	- r!kitele.baf: <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486802">Lollorian's ForceSpellRES corrections<a> (replaced *ga_somespell* with *somespell*).
 	- kitanyaj.d and kitya.d: <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482945">Lollorian's GLOBAL fixes</a> (replaced *GLOBALS* variable with *GLOBAL*).
 	- kitanyaj.d: Made sure all instances of "*!Dead("R#Kitanya)*" have been replaced with "*!Dead("R#Kitanya")*".
+
+- Rewrote old-school "*Wizard Slayer Bug Fixes*" component coding in a more modern way.
 - Cleaned up old ids entries patch (action, kits) and disabling broken stuff from key file process, replaced with more recent BG2 Fixpack ones.
 - Removed useless backup folder.
 - Reorganized mod architecture tree: created "*lang*" and "*cre*" folders to sort files according to their types.

@@ -1,5 +1,4 @@
 // Version 6.2
-
 BACKUP ~kitanya/backup~
 AUTHOR ~rastor@rpgdungeon.net~
 
@@ -67,25 +66,13 @@ ACTION_IF FILE_EXISTS ~override/r#WizardslayerFixes.rpgd~
   COPY_EXISTING ~SW1H01.ITM~ ~override/r#WizardslayerFixes.rpgd~
  END
 
-COPY_EXISTING ~SCRL03.ITM~ ~override~
-	      ~SCRL04.ITM~ ~override~
-	      ~SCRL05.ITM~ ~override~
-	      ~SCRL06.ITM~ ~override~
-	      ~SCRL07.ITM~ ~override~
-	      ~SCRL08.ITM~ ~override~
-	      ~SCRL09.ITM~ ~override~
-	      ~SCRL10.ITM~ ~override~
-	      ~SCRL11.ITM~ ~override~
-	      ~SCRL12.ITM~ ~override~
-	      ~SCRL13.ITM~ ~override~
-	      ~SCRL14.ITM~ ~override~
-	      ~SCRL15.ITM~ ~override~
-	      ~SCRL16.ITM~ ~override~
-	      ~SCRL17.ITM~ ~override~
-	      ~SCRL18.ITM~ ~override~
- READ_BYTE 0x2f "usability"
- WRITE_BYTE 0x2f ("%usability%" BOR "0b00000010")
-BUT_ONLY_IF_IT_CHANGES
+OUTER_FOR (i = 3 ; i < 19 ; ++i) BEGIN
+	ACTION_IF (i < 10) BEGIN OUTER_SPRINT scroll EVAL "scrl0%i%.itm" END ELSE BEGIN OUTER_SPRINT scroll EVAL "scrl%i%.itm" END
+		COPY_EXISTING ~%scroll%~ ~override~
+			WRITE_BYTE 0x2f (THIS BOR BIT1)	// add wizard slayer flag
+		BUT_ONLY
+	END
+END
 
 
 /* ==================================== *
