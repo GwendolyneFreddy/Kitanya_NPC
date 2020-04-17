@@ -6,92 +6,20 @@ AUTHOR ~rastor@rpgdungeon.net~
 VERSION ~v6.4.1~
 
 ALWAYS
-  ACTION_IF NOT FILE_EXISTS ~override/iplot01k.itm~
-   THEN BEGIN
-      COPY_EXISTING ~SW1H01.itm~ ~override/iplot01k.itm~
-    END
-  ACTION_IF NOT FILE_EXISTS ~override/iplot04g.itm~
-   THEN BEGIN
-      COPY_EXISTING ~SW1H01.itm~ ~override/iplot04g.itm~
-    END
-  ACTION_IF NOT FILE_EXISTS ~override/iplot04h.itm~
-   THEN BEGIN
-      COPY_EXISTING ~SW1H01.itm~ ~override/iplot04h.itm~
-    END
-  ACTION_IF NOT FILE_EXISTS ~override/iplot04i.itm~
-   THEN BEGIN
-      COPY_EXISTING ~SW1H01.itm~ ~override/iplot04i.itm~
-    END
- END // ACTION_IF
- // KIT.IDS Patch (Thanks, CamDawg!)
- COPY_EXISTING_REGEXP GLOB ~^anomen[0-9]*\.cre~ ~override~
-                           ~^imoen[0-9]*\.cre~  ~override~
-                           ~^mazzy[0-9]*\.cre~  ~override~
-  READ_LONG 0x244 "current_kit_value"
-  PATCH_IF ("%current_kit_value%" = 0x00000000) BEGIN
-    WRITE_LONG 0x244 0x40000000
-  END
- BUT_ONLY_IF_IT_CHANGES
 
- COPY_EXISTING_REGEXP GLOB ~^haer[0-9]*\.cre~ ~override~
-  READ_LONG 0x244 "current_kit_value"
-  PATCH_IF ("%current_kit_value%" = 0x00000020) BEGIN
-    WRITE_LONG 0x244 0x400d0000
-  END
- BUT_ONLY_IF_IT_CHANGES
+	ACTION_IF NOT VARIABLE_IS_SET is_ee BEGIN // Always block must run only once per install!
 
- COPY_EXISTING_REGEXP GLOB ~^korgan[0-9]*\.cre~ ~override~
-  READ_LONG 0x244 "current_kit_value"
-  PATCH_IF ("%current_kit_value%" = 0x00010000) BEGIN
-    WRITE_LONG 0x244 0x40010000
-  END
- BUT_ONLY_IF_IT_CHANGES
+		// Determines which game is installed and if the game is an Enhanced Edition.
+		OUTER_SET is_ee = (GAME_IS ~bg2ee eet~) ? 1 : 0					// EE game
+		OUTER_SET is_tob = (GAME_IS ~bgt tob tutu tutu_totsc~) ? 1 : 0	// based on vanilla ToB engine
+		OUTER_SET is_soa = (GAME_IS ~soa~) ? 1 : 0						// based on vanilla Soa engine
+		OUTER_SET is_bg2ee = (GAME_IS "bg2ee") ? 1 : 0					// b2gee
+		OUTER_SET is_eet = (GAME_IS "eet") ? 1 : 0						// eet
 
-/* Thanks to CamDawg for providing this code */
- COPY_EXISTING ~kit.ids~ ~override~
-  REPLACE_TEXTUALLY ~.*\bTRUECLASS\b~              ~0x4000 TRUECLASS~
-  REPLACE_TEXTUALLY ~.*\bBERSERKER\b~              ~0x4001 BERSERKER~
-  REPLACE_TEXTUALLY ~.*\bWIZARDSLAYER\b~           ~0x4002 WIZARDSLAYER~
-  REPLACE_TEXTUALLY ~.*\bKENSAI\b~                 ~0x4003 KENSAI~
-  REPLACE_TEXTUALLY ~.*\bCAVALIER\b~               ~0x4004 CAVALIER~
-  REPLACE_TEXTUALLY ~.*\bINQUISITOR\b~             ~0x4005 INQUISITOR~
-  REPLACE_TEXTUALLY ~.*\bUNDEADHUNTER\b~           ~0x4006 UNDEADHUNTER~
-  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_ABJURER\b~     ~0x0040 MAGESCHOOL_ABJURER~
-  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_CONJURER\b~    ~0x0080 MAGESCHOOL_CONJURER~
-  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_DIVINER\b~     ~0x0100 MAGESCHOOL_DIVINER~
-  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_ENCHANTER\b~   ~0x0200 MAGESCHOOL_ENCHANTER~
-  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_ILLUSIONIST\b~ ~0x0400 MAGESCHOOL_ILLUSIONIST~
-  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_INVOKER\b~     ~0x0800 MAGESCHOOL_INVOKER~
-  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_NECROMANCER\b~ ~0x1000 MAGESCHOOL_NECROMANCER~
-  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_TRANSMUTER\b~  ~0x2000 MAGESCHOOL_TRANSMUTER~
-  REPLACE_TEXTUALLY ~.*\bMAGESCHOOL_GENERALIST\b~  ~0x0000 WILDMAGE~
-  REPLACE_TEXTUALLY ~.*\bFERALAN\b~                ~0x4007 FERALAN~
-  REPLACE_TEXTUALLY ~.*\bSTALKER\b~                ~0x4008 STALKER~
-  REPLACE_TEXTUALLY ~.*\bBEASTMASTER\b~            ~0x4009 BEASTMASTER~
-  REPLACE_TEXTUALLY ~.*\bASSASIN\b~                ~0x400A ASSASIN~
-  REPLACE_TEXTUALLY ~.*\bBOUNTYHUNTER\b~           ~0x400B BOUNTYHUNTER~
-  REPLACE_TEXTUALLY ~.*\bSWASHBUCKLER\b~           ~0x400C SWASHBUCKLER~
-  REPLACE_TEXTUALLY ~.*\bBLADE\b~                  ~0x400D BLADE~
-  REPLACE_TEXTUALLY ~.*\bJESTER\b~                 ~0x400E JESTER~
-  REPLACE_TEXTUALLY ~.*\bSKALD\b~                  ~0x400F SKALD~
-  REPLACE_TEXTUALLY ~.*\bGODTALOS\b~               ~0x4013 GODTALOS~
-  REPLACE_TEXTUALLY ~.*\bGODHELM\b~                ~0x4014 GODHELM~
-  REPLACE_TEXTUALLY ~.*\bGODLATHANDER\b~           ~0x4015 GODLATHANDER~
-  REPLACE_TEXTUALLY ~.*\bTOTEMIC\b~                ~0x4010 TOTEMIC~
-  REPLACE_TEXTUALLY ~.*\bSHAPESHIFTER\b~           ~0x4011 SHAPESHIFTER~
-  REPLACE_TEXTUALLY ~.*\bBEASTFRIEND\b~            ~0x4012 BEASTFRIEND~
-  REPLACE_TEXTUALLY ~.*\bBARBARIAN\b~              ~0x0000 BARBARIAN~
-  REPLACE_TEXTUALLY ~.*\bWILDMAGE\b~               ~0x0000 WILDMAGE~
- BUT_ONLY_IF_IT_CHANGES
-
- APPEND ~kit.ids~ ~0x4000 TRUECLASS~
-  UNLESS ~\bTRUECLASS\b~
- APPEND ~kit.ids~ ~0x0000 BARBARIAN~
-  UNLESS ~\bBARBARIAN\b~
- APPEND ~kit.ids~ ~0x0000 WILDMAGE~
-  UNLESS ~\bWILDMAGE\b~
 
  AT_INTERACTIVE_EXIT ~VIEW kitanya/readme-kitanya.html~
+
+	END
 
 END // of ALWAYS BLOCK
 

@@ -3,8 +3,30 @@
  * =========================================== */
 
 
-// Adds ToB trigger/actions to SoA games.
+/* ------------------------------------------ *
+ *  Fixing .ids, courtesy of the BG2 Fixpack  *
+ * ------------------------------------------ */
+
+// Adds ToB actions to SoA
+// -----------------------
 INCLUDE ~kitanya/lib/tob2soa.tph~
+
+// kit fixes
+// ---------
+INCLUDE ~kitanya/lib/kit_ids_fixer.tpa~
+
+
+/* ----------------------------------------------------------------- *
+ *  Disable broken stuff from key file, courtesy of the BG2 Fixpack  *
+ * ----------------------------------------------------------------- */
+ACTION_IF (is_ee = 0) AND (NOT FILE_EXISTS_IN_GAME ~cdbehbla.pro~) BEGIN
+
+	ACTION_FOR_EACH file IN iplot01k.itm iplot04g.itm iplot04h.itm iplot04i.itm xr2400.are xr2600.are BEGIN
+		DISABLE_FROM_KEY "%file%"
+	END
+
+END
+
 
 /* ---------------------------------- *
  *  Installing dialogues and scripts  *
