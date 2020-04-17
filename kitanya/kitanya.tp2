@@ -41,9 +41,9 @@ LANGUAGE ~Espanol (traduccion por Pattoko at ClanDLAN.net)~
  * ========================================== */
 BEGIN @0
 DESIGNATED 0 LABEL ~kitanya_npc~
+REQUIRE_PREDICATE GAME_IS ~bg2 tob bgt bg2ee eet~ @11	// ~You must have BG2, ToB, BGT, BG2:EE or EET installed to install the RPG Solaufein Flirt Pack for BG2.~
 
-ACTION_IF FILE_EXISTS ~override/r#Kitanya.rpgd~
- THEN BEGIN
+ACTION_IF FILE_EXISTS ~override/r#Kitanya.rpgd~ BEGIN
   FAIL @59
  END ELSE BEGIN
   PRINT @60
@@ -58,9 +58,9 @@ INCLUDE ~%MOD_FOLDER%/lib/main_component.tpa~
  * ========================= */
 BEGIN @1
 DESIGNATED 01 LABEL ~kitanya_wizard_slayer_fix~
+REQUIRE_PREDICATE GAME_IS ~bg2 tob bgt bg2ee eet~ @11	// ~You must have BG2, ToB, BGT, BG2:EE or EET installed to install the RPG Solaufein Flirt Pack for BG2.~
 
-ACTION_IF FILE_EXISTS ~override/r#WizardslayerFixes.rpgd~
- THEN BEGIN
+ACTION_IF FILE_EXISTS ~override/r#WizardslayerFixes.rpgd~ BEGIN
   FAIL @61
  END ELSE BEGIN
   COPY_EXISTING ~SW1H01.ITM~ ~override/r#WizardslayerFixes.rpgd~
@@ -80,10 +80,10 @@ END
  * ==================================== */
 BEGIN @2 // Code stolen from Nythrun and bastardized!
 DESIGNATED 2 LABEL ~kitanya_flaming_sword~
+REQUIRE_PREDICATE GAME_IS ~bg2 tob bgt bg2ee eet~ @11	// ~You must have BG2, ToB, BGT, BG2:EE or EET installed to install the RPG Solaufein Flirt Pack for BG2.~
 REQUIRE_COMPONENT ~1pp_flamingswords/1pp_flamingswords.tp2~ ~0~ @66
 
-ACTION_IF FILE_EXISTS ~override/r#KitanyaFlamingSword.rpgd~
- THEN BEGIN
+ACTION_IF FILE_EXISTS ~override/r#KitanyaFlamingSword.rpgd~ BEGIN
   FAIL @61
  END ELSE BEGIN
   COPY_EXISTING ~SW1H01.ITM~ ~override/r#KitanyaFlamingSword.rpgd~

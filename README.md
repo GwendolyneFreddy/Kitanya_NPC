@@ -120,19 +120,21 @@ One Pixel Productions introduced new graphics for a flaming sword a few years ag
 
 #### Version 6.5 (day month, 2020)
 
+- ....
 - Renamed *setup-Kitanya.tp2* -> *kitanya.tp2* to support AL|EN's "Project Infinity".
+- Added missing `REQUIRE_PREDICATE` process to avoid installing the mod in inaccurate games.
 - Added components `DESIGNATED` numbers and "*kitanya_npc*", "*kitanya_wizard_slayer_fix*" and "*kitanya_flaming_sword*" `LABELS`.
 - Externalized tp2 code into *main_component.tpa* and *kitanya_fs.tpa* libraries for more comfortable readability and maintenance.
 - Included BWP Fixpack patches:
-	- r!kitele.baf: <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486802">Lollorian's ForceSpellRES corrections<a> (replaced *ga_somespell* with *somespell*).
-	- kitanyaj.d and kitya.d: <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=482945">Lollorian's GLOBAL fixes</a> (replaced *GLOBALS* variable with *GLOBAL*).
-	- kitanyaj.d: Made sure all instances of "*!Dead("R#Kitanya)*" have been replaced with "*!Dead("R#Kitanya")*".
-
+    - r!kitele.baf: <a href="http://www.shsforums.net/topic/42220-fixes-for-the-big-fixpack/?p=486802">Lollorian's ForceSpellRES corrections<a> (replaced *ga_somespell* with *somespell*).
+    - Fixed a bug that could cause Kitanya to go hostile in Firkraag's lair (I'm the one that wanted this feature in WeiDU to begin with - I should know better!).
+    - kitanyaj.d: Made sure all instances of "*!Dead("R#Kitanya)*" have been replaced with "*!Dead("R#Kitanya")*".
 - Rewrote old-school "*Wizard Slayer Bug Fixes*" component coding in a more modern way.
 - Cleaned up old ids entries patch (action, kits) and disabling broken stuff from key file process, replaced with more recent BG2 Fixpack ones.
 - Removed useless backup folder.
 - Reorganized mod architecture tree: created "*lang*" and "*cre*" folders to sort files according to their types.
 - Lower cased files.
+- Updated WeiDU installer to v246.
 
 ## 
 
